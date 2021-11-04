@@ -1,6 +1,5 @@
 # Dicionario de Dados
-
-
+<br></br>
 ## Users
 
 | Nome        | Descrição           |   Tipo de dados   |   Tamanho    | Restriçoes           |
