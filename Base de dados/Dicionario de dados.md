@@ -2,30 +2,139 @@
 <br></br>
 ## Users
 
-| Nome        | Descrição           |   Tipo de dados   |   Tamanho    | Restriçoes           |
-|   :----:    |    :----:           |      :----:       |    :----:    |     :----:           |
-| us_id       | Id do user          | int               |              | Pk, not null, serial |
-| us_name     | Nome do user        | varchar           |    30        | not null             |
-| us_bdate    | Data de anversario  | date              |              | not null             |
-| us_gender   | Genero do user      | char              | 1            |                      |
-
-
+| Nome        | Descrição                             |   Tipo de dados   |   Tamanho    | Restriçoes           |
+|   :----:    |    :----:                             |      :----:       |    :----:    |     :----:           |
+| us_id       | Id do user                            | int               |              | Pk, serial           |
+| us_name     | Nome do user                          | varchar           |    60        | not null             |
+| us_bdate    | Data de anversario                    | date              |              | not null             |
+| us_gender   | Genero do user                        | char              | 1            |  not null            |
+| us_email    | Email do user                         | varchar           |     30       |                      |
+| us_country  | Pais do user                          | varchar           | 30           |                      |
+| us_bio      | Uma breve descriçao de si mesmo       | varchar           |     400      |                      |
+| us_dist     | Distancia que o user ja percorreu     | float             |              | default 0           |
 #
+<br></br>
 
 ## Spots
 
-| Nome        | Descrição           |   Tipo de dados   |   Tamanho    | Restriçoes           |
-|   :----:    |    :----:           |      :----:       |    :----:    |     :----:           |
-| us_id       | Id do user          | int               |              | Pk, not null, serial |
-| us_name     | Nome do user        | varchar           |    30        | not null             |
-| us_bdate    | Data de anversario  | date              |              | not null             |
-| us_gender   | Genero do user      | char              | 1            |                      |
-
+| Nome        | Descrição                             |   Tipo de dados   |   Tamanho    | Restriçoes           |
+|   :----:    |    :----:                             |      :----:       |    :----:    |     :----:           |
+| sp_id       | Id da atração                         | int               |              | Pk, serial           |
+| sp_name     | Nome da atração                       | varchar           |    60        | not null             |
+| sp_lat      | Latitude da atração                   | float             |              | not null             |
+| sp_long     | Longitude da atração                  | float             |              |  not null            |
+| sp_price    | Saber se a atraçao e paga ou não      | boolean           |              |                      |
+| us_bio      | Uma breve descriçao da atração        | varchar           |     400      |                      |
 #
+<br></br>
 
-| Nome        | Descrição           |   Tipo de dados   |   Tamanho    | Restriçoes           |
-|   :----:    |    :----:           |      :----:       |    :----:    |     :----:           |
-| us_id       | Id do user          | int               |              | Pk, not null, serial |
-| us_name     | Nome do user        | varchar           |    30        | not null             |
-| us_bdate    | Data de anversario  | date              |              | not null             |
-| us_gender   | Genero do user      | char              | 1            |                      |
+## Routes
+
+| Nome        | Descrição                             |   Tipo de dados   |   Tamanho    | Restriçoes           |
+|   :----:    |    :----:                             |      :----:       |    :----:    |     :----:           |
+| rt_id       | Id da rota                            | int               |              | Pk, serial           |
+| rt_name     | Nome da rota                          | varchar           |    60        |                      |
+| rt_dist     | Distancia total da rota               | float             |              |                      |
+| rt_bio      | Uma breve descriçao da atração        | varchar           |     400      |                      |
+#
+<br></br>
+
+## Tags
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| tg_id       | Id da tag                                      | int               |              | Pk, serial        |
+| tg_name     | Nome da tag (ex.: Natureza, Animais, ...)      | varchar           |    30        | not null          |
+| tg_tt_id    | id do tipo de tag                              | int               |              |                   |
+#
+<br></br>
+
+## Tag Types
+
+| Nome        | Descrição                                                              |   Tipo de dados   |   Tamanho    | Restriçoes           |
+|   :----:    |    :----:                                                              |      :----:       |    :----:    |     :----:           |
+| tt_id       | Id do tipo de tag                                                      | int               |              | Pk, serial           |
+| tt_name     | Nome do tipo de tag (ex.: Sistema, User, ...)                          | varchar           |    30        | not null             |
+#
+<br></br>
+
+## User tags
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| ut_id       | Id da Tag de um user                           | int               |              | Pk, serial        |
+| ut_tg_id    | Qual e a tag                                   | varchar           |    30        | not null          |
+| ut_us_id    | De que User                                    | int               |              | not null          |
+#
+<br></br>
+
+## Spot Tags
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| st_id       | Id da Tag de uma atração                       | int               |              | Pk, serial        |
+| st_sp_id    | De que atração                                 | varchar           |    30        | not null          |
+| st_tg_id    | Qual a tag                                     | int               |              | not null          |
+#
+<br></br>
+
+## Spot Evaluations
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| se_id       | Id da avaliação da atração                   | int               |              | Pk, serial        |
+| se_rate     | Rate de 1 a 5 da atração                       | int               |              | not null          |
+| se_comment  | Comentario de um user sobre a atração          | varchar           |   400        |                   |
+| se_us_id    | Que user comentou                              | int               |              | not null          |
+| se_sp_id    | Qual foi a atração                             | int               |              | not null          |
+#
+<br></br>
+
+## Route Evaluations
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| re_id       | Id da avaliação da rota                        | int               |              | Pk, serial        |
+| re_rate     | Rate de 1 a 5 da rota                          | int               |              | not null          |
+| re_comment  | Comentario de um user sobre a rota             | varchar           |   400        |                   |
+| re_us_id    | Que user comentou                              | int               |              | not null          |
+| re_rt_id    | Qual foi a rota                                | int               |              | not null          |
+#
+<br></br>
+
+## Fav Spots
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| fs_id       | Id da rota favorita de um user                 | int               |              | Pk, serial        |
+| fs_us_id    | De que user                                    | int               |              | not null          |
+| fs_sp_id    | Qual a atração                                 | int               |              | not null          |
+#
+<br></br>
+
+## Type Users
+
+| Nome        | Descrição                                                 |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                                 |      :----:       |    :----:    |     :----:        |
+| tu_id       | Id do tipo de user                                        | int               |              | Pk, serial        |
+| tu_name     | Nome do tipo (ex.:Novato, desbravador, especialista, ..)  | varchar           | 30           | not null          |
+#
+<br></br>
+
+## User Achievements
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| ua_id       | Id da medalha de um user                       | int               |              | Pk, serial        |
+| ua_date     | Quando conseguiu                               | date              |              | not null          |
+| ua_us_id    | De que user                                    | int               |              | not null          |
+| ua_ac_id    | Qual foi a medalha                             | int               |              | not null          |
+#
+<br></br>
+
+## Achievements
+
+| Nome        | Descrição                                      |   Tipo de dados   |   Tamanho    | Restriçoes        |
+|   :----:    |    :----:                                      |      :----:       |    :----:    |     :----:        |
+| ac_id       | Id da medalha                                  | int               |              | Pk, serial        |
+| ac_name     | Nome da medalha (ex.: 1 museu, 5 museus, ...)  | varchar           |  30          | not null          |

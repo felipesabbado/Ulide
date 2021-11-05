@@ -17,7 +17,7 @@ create table routes (
 			primary key,
 	rt_name varchar(60),
 	rt_bio varchar(400),
-	rt_dist int
+	rt_dist float
 );
 
 create table spots (
@@ -64,7 +64,7 @@ create table user_tags (
 
 create table spot_tags (
 	st_id serial
-		constraint spot_tags_pk
+		constraint spot_tags_pkss
 			primary key,
 	st_sp_id int not null,
 	st_tg_id int not null
