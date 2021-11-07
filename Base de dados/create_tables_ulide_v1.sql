@@ -114,9 +114,9 @@ create table user_achievements (
 	ua_ac_id int not null
 );
 
-create table achivements (
+create table achievements (
 	ac_id serial
-		constraint achivement_pk
+		constraint achievement_pk
 			primary key,
 	ac_name varchar(30)
 );
