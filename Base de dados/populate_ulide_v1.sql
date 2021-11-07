@@ -1,5 +1,12 @@
 
 -------------------------------------------------------- users ---------------------------------------------------------
+
+insert into type_users(tu_name) values ('Super');
+insert into type_users(tu_name) values ('Nivel 1');
+insert into type_users(tu_name) values ('Nivel 2');
+insert into type_users(tu_name) values ('Nivel 3');
+insert into type_users(tu_name) values ('Nivel 4');
+
 insert into users(us_name, us_bdate, us_gender, us_tu_id)
 values ('Super Ulide', to_date('2021-11-07', 'YYYY-MM-DD'), 'M', 1);
 insert into users(us_name, us_bdate, us_gender, us_email, us_country, us_bio)
@@ -37,60 +44,62 @@ insert into tags (tg_name, tg_tt_id) values ('Desporto', 1);
 insert into tags (tg_name, tg_tt_id) values ('Festa', 2);
 insert into tags (tg_name, tg_tt_id) values ('Cool', 2);
 insert into tags (tg_name, tg_tt_id) values ('Sexta-feira', 2);
-insert into tags (tg_name, tg_tt_id) values ('Mediaaval', 1);
+insert into tags (tg_name, tg_tt_id) values ('Mediaval', 1);
 insert into tags (tg_name, tg_tt_id) values ('Ar livre', 2);
-insert into tags (tg_name, tg_tt_id) values ('Conecimento',1);
-insert into tags (tg_name, tg_tt_id) values ('Elevdor',1);
-insert into tags (tg_name, tg_tt_id) values ('Estadio', 1);
+insert into tags (tg_name, tg_tt_id) values ('Conhecimento',1);
+insert into tags (tg_name, tg_tt_id) values ('Elavdor',1);
+insert into tags (tg_name, tg_tt_id) values ('Estádio', 1);
 insert into tags (tg_name, tg_tt_id) values ('Criança', 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (1, 2);
-insert into spot_tags(st_sp_id, st_tg_id) values (1, 7);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (1, 2, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (1, 7, 3);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (2, 2);
-insert into spot_tags(st_sp_id, st_tg_id) values (2, 9);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (2, 2, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (2, 9, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (3, 2);
-insert into spot_tags(st_sp_id, st_tg_id) values (3, 9);
-insert into spot_tags(st_sp_id, st_tg_id) values (3, 8);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (3, 2, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (3, 9, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (3, 8, 2);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (4, 2);
-insert into spot_tags(st_sp_id, st_tg_id) values (4, 8);
-insert into spot_tags(st_sp_id, st_tg_id) values (4, 10);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (4, 2, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (4, 8, 3);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (4, 10, 4);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (5, 2);
-insert into spot_tags(st_sp_id, st_tg_id) values (5, 4);
-insert into spot_tags(st_sp_id, st_tg_id) values (5, 11);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (5, 2, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (5, 4, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (5, 11, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (6, 12);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (6, 12, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (7, 5);
-insert into spot_tags(st_sp_id, st_tg_id) values (7, 13);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (7, 5, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (7, 13, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (8, 3);
-insert into spot_tags(st_sp_id, st_tg_id) values (8, 11);
-insert into spot_tags(st_sp_id, st_tg_id) values (8, 14);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (8, 3, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (8, 11, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (8, 14, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (9, 10);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (9, 10, 3);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (10, 3);
-insert into spot_tags(st_sp_id, st_tg_id) values (10, 10);
-insert into spot_tags(st_sp_id, st_tg_id) values (10, 14);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (10, 3, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (10, 10, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (10, 14, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (11, 2);
-insert into spot_tags(st_sp_id, st_tg_id) values (11, 11);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (11, 2, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (11, 11, 1);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (12, 1);
-insert into spot_tags(st_sp_id, st_tg_id) values (12, 8);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (12, 1, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (12, 8, 4);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (12, 8, 2);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (13, 1);
-insert into spot_tags(st_sp_id, st_tg_id) values (13, 8);
-insert into spot_tags(st_sp_id, st_tg_id) values (13, 10);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (14, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (13, 1, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (13, 8, 2);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (13, 10, 3);
 
-insert into spot_tags(st_sp_id, st_tg_id) values (15, 1);
-insert into spot_tags(st_sp_id, st_tg_id) values (15, 10);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (14, 1, 1);
+
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (15, 1, 1);
+insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (15, 10, 3);
 
 ------------------------------------------------- end tags -------------------------------------------------------------
 
