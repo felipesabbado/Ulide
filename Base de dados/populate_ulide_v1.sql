@@ -277,6 +277,25 @@ insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
 values (5, 11, 3);
 insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
 values (4, 11, 4);
+
+insert into done_spots(ds_us_id, ds_sp_id) values (2, 12);
+insert into done_spots(ds_us_id, ds_sp_id) values (2, 13);
+insert into done_spots(ds_us_id, ds_sp_id) values (2, 14);
+insert into done_spots(ds_us_id, ds_sp_id) values (2, 15);
+insert into done_spots(ds_us_id, ds_sp_id) values (2, 8);
+
+insert into done_spots(ds_us_id, ds_sp_id) values (3, 1);
+insert into done_spots(ds_us_id, ds_sp_id) values (3, 2);
+insert into done_spots(ds_us_id, ds_sp_id) values (3, 5);
+insert into done_spots(ds_us_id, ds_sp_id) values (3, 11);
+insert into done_spots(ds_us_id, ds_sp_id) values (3, 16);
+
+insert into done_spots(ds_us_id, ds_sp_id) values (4, 5);
+insert into done_spots(ds_us_id, ds_sp_id) values (4, 2);
+
+insert into done_spots(ds_us_id, ds_sp_id) values (5, 8);
+insert into done_spots(ds_us_id, ds_sp_id) values (5, 16);
+insert into done_spots(ds_us_id, ds_sp_id) values (5, 6);
 ----------------------------------------------------- End o spots ------------------------------------------------------
 
 -------------------------------------------- Everything related with routes --------------------------------------------
@@ -381,6 +400,14 @@ insert into route_evaluations(re_rate, re_us_id, re_rt_id)
 values (1, 9, 4);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id)
 values (5, 9, 5);
+
+insert into done_routes(dr_us_id, dr_rt_id) values (2, 1);
+insert into done_routes(dr_us_id, dr_rt_id) values (2, 2);
+insert into done_routes(dr_us_id, dr_rt_id) values (3, 3);
+insert into done_routes(dr_us_id, dr_rt_id) values (4, 4);
+insert into done_routes(dr_us_id, dr_rt_id) values (5, 2);
+
+insert into progress_routes(pr_us_id, pr_rt_id, pr_sp_id) values (2, 2, 16);
 
 ----------------------------------------- End Routes -------------------------------------------------------------------
 
