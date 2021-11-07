@@ -263,6 +263,23 @@ insert into done_routes(dr_us_id, dr_rt_id) values (5, 2);
 
 insert into progress_routes(pr_us_id, pr_rt_id, pr_sp_id) values (2, 2, 16);
 
+insert into fav_routes(fr_us_id, fr_rt_id) values (2, 1);
+insert into fav_routes(fr_us_id, fr_rt_id) values (3, 1);
+insert into fav_routes(fr_us_id, fr_rt_id) values (4, 1);
+insert into fav_routes(fr_us_id, fr_rt_id) values (5, 1);
+insert into fav_routes(fr_us_id, fr_rt_id) values (9, 1);
+insert into fav_routes(fr_us_id, fr_rt_id) values (12, 1);
+
+insert into fav_routes(fr_us_id, fr_rt_id) values (3, 3);
+insert into fav_routes(fr_us_id, fr_rt_id) values (4, 3);
+insert into fav_routes(fr_us_id, fr_rt_id) values (6, 3);
+
+insert into fav_routes(fr_us_id, fr_rt_id) values (2, 4);
+insert into fav_routes(fr_us_id, fr_rt_id) values (14, 4);
+insert into fav_routes(fr_us_id, fr_rt_id) values (15, 4);
+
+insert into fav_routes(fr_us_id, fr_rt_id) values (5, 5);
+
 ----------------------------------------- End Routes -------------------------------------------------------------------
 
 ------------------------------ Everything related with achievements ----------------------------------------------------
