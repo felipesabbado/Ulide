@@ -8,7 +8,8 @@ create table users(
 	us_email varchar(30),
 	us_country varchar(30),
 	us_bio varchar(400),
-	us_dist int default 0
+	us_dist int default 0,
+	us_tu_id int default 2
 );
 
 create table routes (
@@ -54,20 +55,13 @@ create table tag_types (
     tt_name varchar(30) not null
 );
 
-create table user_tags (
-	ut_id serial
-		constraint user_tags_pk
+create table users_spots_tags (
+	ust_id serial
+		constraint users_spots_tags_pk
 			primary key,
-	ut_tg_id int not null,
-	ut_us_id int not null
-);
-
-create table spot_tags (
-	st_id serial
-		constraint spot_tags_pkss
-			primary key,
-	st_sp_id int not null,
-	st_tg_id int not null
+	ust_sp_id int not null,
+	ust_tg_id int not null,
+    ust_us_id int not null
 );
 
 create table spot_evaluations (
@@ -116,7 +110,38 @@ create table user_achievements (
 
 create table achievements (
 	ac_id serial
-		constraint achievement_pk
+		constraint achievements_pk
 			primary key,
 	ac_name varchar(30)
 );
+
+create table done_routes
+(
+    dr_id serial
+        constraint done_routes_pk
+            primary key,
+    dr_us_id int not null,
+    dr_rt_id int not null
+);
+
+create table done_spots
+(
+    ds_id serial
+        constraint done_spots_pk
+            primary key,
+    ds_us_id int not null,
+    ds_sp_id int not null
+);
+
+create table progress_routes
+(
+    pr_id serial
+        constraint progress_routes_pk
+            primary key,
+    pr_us_id int not null,
+    pr_rt_id int not null,
+    pr_sp_id int not null
+);
+
+
+
