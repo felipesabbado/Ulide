@@ -157,126 +157,38 @@ insert into fav_spots(fs_us_id, fs_sp_id) values (7, 16);
 
 
 insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 'Not very impressive', 2, 1);
+values (5, 'Fantastic', 2, 12);
 insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 'I never come here again', 2, 2);
+values (4, 'Mui bueno', 2, 13);
 insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 'Terrible', 2, 3);
+values (1, 'Not for me', 2, 14);
 insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 'Very good!', 2, 4);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 'Nice place', 2, 5);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (2, 'Very bad', 2, 6);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 'It could be better', 2, 7);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 'Pleasant, but expensive!', 2, 8);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 'Great', 3, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 'What a horrible place', 3, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 'Best experience of my life', 3, 3);
+values (5, 'Im a tea pot', 2, 15);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
-values (5, 3, 4);
+values (4, 2, 8);
+
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
+values (5, 3, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
+values (4, 3, 2);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
 values (2, 3, 5);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
-values (3, 3, 6);
+values (3, 3, 11);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
-values (4, 3, 7);
-insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
-values (5, 3, 8);
+values (4, 3, 16);
 
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 4, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
+values (5, 4, 5);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
 values (4, 4, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 4, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 4, 4);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 4, 5);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (2, 4, 6);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 4, 7);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 4, 8);
 
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 5, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 5, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 5, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 5, 4);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 5, 5);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (2, 5, 6);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 5, 7);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 5, 8);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 6, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 6, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 6, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 6, 4);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (2, 7, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 7, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 7, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 7, 4);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (2, 8, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 8, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 8, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 8, 4);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 9, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 9, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 9, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 9, 4);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (1, 10, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 10, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 10, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 10, 4);
-
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 11, 1);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (3, 11, 2);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (5, 11, 3);
-insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
-values (4, 11, 4);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
+values (3, 5, 8);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
+values (4, 5, 16);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
+values (5, 5, 6);
 
 insert into done_spots(ds_us_id, ds_sp_id) values (2, 12);
 insert into done_spots(ds_us_id, ds_sp_id) values (2, 13);
@@ -326,83 +238,25 @@ insert into route_spots (rs_rt_id, rs_sp_id) values (5, 11);
 insert into route_spots (rs_rt_id, rs_sp_id) values (5, 12);
 
 
-insert into routes (rt_name,rt_bio, rt_dist) values ('Compras', 'Capitalismo no seu melhor');
-insert into routes (rt_name, rt_bio, rt_dist) values ('Natureza', 'Muitos animais agua e plantas, brother!!!');
-insert into routes (rt_name,rt_dist) values ('Histórica');
-insert into routes (rt_name,rt_dist) values ('Popular');
-insert into routes (rt_name,rt_dist) values ('Gratis');
+insert into routes (rt_name,rt_bio, rt_dist) values ('Compras', 'Capitalismo no seu melhor', 4);
+insert into routes (rt_name, rt_bio, rt_dist) values ('Natureza', 'Muitos animais agua e plantas, brother!!!', 10);
+insert into routes (rt_name,rt_dist) values ('Histórica', 3);
+insert into routes (rt_name,rt_dist) values ('Popular', 2);
+insert into routes (rt_name,rt_dist) values ('Gratis', 6);
 
 
 insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
 values (5, 'Very good!', 2, 1);
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (1, 'Awful', 2, 2);
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (4, 'Nice!', 2, 3);
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (5, 'Cool places, I would like to come here more often', 2, 4);
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (5, 'Its all for free', 2, 5);
-
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (4, 'Beautiful view', 3, 1);
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (3, 'Mehh!', 3, 2);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (2, 3, 3);
+values (3, 3, 3);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (5, 3, 4);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (1, 3, 5);
-
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (2, 'Boring', 4, 1);
-insert into route_evaluations(re_rate, re_comment, re_us_id, re_rt_id)
-values (1, 'Dirty and full of people', 4, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (2, 4, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (5, 4, 4);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (3, 4, 5);
-
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (5, 5, 1);
+values (2, 4, 4);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id)
 values (4, 5, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (4, 5, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (4, 5, 4);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (3, 5, 5);
 
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (2, 6, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (4, 6, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (5, 6, 5);
 
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (5, 7, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (3, 7, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (4, 7, 3);
-
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (4, 8, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (4, 8, 4);
-
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (1, 9, 4);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id)
-values (5, 9, 5);
 
 insert into done_routes(dr_us_id, dr_rt_id) values (2, 1);
-insert into done_routes(dr_us_id, dr_rt_id) values (2, 2);
 insert into done_routes(dr_us_id, dr_rt_id) values (3, 3);
 insert into done_routes(dr_us_id, dr_rt_id) values (4, 4);
 insert into done_routes(dr_us_id, dr_rt_id) values (5, 2);
