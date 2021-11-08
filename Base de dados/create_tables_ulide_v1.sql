@@ -96,7 +96,7 @@ create table type_users (
 	tu_id serial
 		constraint type_users_pk
 			primary key,
-	tu_name varchar(30)
+	tu_name varchar(30) not null
 );
 
 create table user_achievements (
@@ -112,7 +112,7 @@ create table achievements (
 	ac_id serial
 		constraint achievements_pk
 			primary key,
-	ac_name varchar(30)
+	ac_name varchar(30) not null
 );
 
 create table done_routes
