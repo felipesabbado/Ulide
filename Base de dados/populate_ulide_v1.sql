@@ -300,21 +300,21 @@ insert into achievements(ac_name) values ('15 Locais Visitados');
 insert into achievements(ac_name) values ('30 Locais Visitados');
 
 insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 5, 1);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 5, 2);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 5, 10);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 5, 11);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 5, 13);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-08-23', 'YYYY-MM-DD'), 5, 2);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-05-01', 'YYYY-MM-DD'), 5, 10);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-07-08', 'YYYY-MM-DD'), 5, 11);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-10-12', 'YYYY-MM-DD'), 5, 13);
 
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 2, 1);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 2, 2);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 2, 3);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-06-03', 'YYYY-MM-DD'), 2, 1);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2020-12-29', 'YYYY-MM-DD'), 2, 2);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-04-17', 'YYYY-MM-DD'), 2, 3);
 insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 2, 13);
 
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 3, 4);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 3, 5);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 3, 10);
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 3, 11);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-05-30', 'YYYY-MM-DD'), 3, 4);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-11', 'YYYY-MM-DD'), 3, 5);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-12-05', 'YYYY-MM-DD'), 3, 10);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-08-13', 'YYYY-MM-DD'), 3, 11);
 insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 3, 13);
 
-insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-19', 'YYYY-MM-DD'), 4, 1);
+insert into user_achievements (ua_date, ua_us_id, ua_ac_id) values (to_date('2021-11-11', 'YYYY-MM-DD'), 4, 1);
 -------------------------------------- End achievements ----------------------------------------------------------------
