@@ -13,7 +13,20 @@ where rs_sp_id = sp_id and rs_rt_id = 1;
 select rt_name from routes, fav_routes
 where fr_rt_id = rt_id
 group by rt_name
-order by count(fr_rt_id) desc ;
+order by count(fr_rt_id) desc;
+
+-- Mostrar todos os spots de cada rota
+select rt_name, sp_name from routes, route_spots, spots
+where rs_sp_id = sp_id and rs_rt_id = rt_id;
+
+-- Mostra o nome das rotas que contenham lugares cujo o nome comece por 'P'
+select rt_name, sp_name from routes, route_spots, spots
+where rs_sp_id = sp_id and rs_rt_id = rt_id and sp_name like 'P%';
+
+-- Mostra só o nome das rotas cujo os lugares comecem pela letra 'P'
+select rt_name from routes, route_spots, spots
+where rs_sp_id = sp_id and rs_rt_id = rt_id and sp_name like 'P%'
+group by rt_name;
 
 -------------------------------------------------- End Routes ----------------------------------------------------------
 
@@ -26,6 +39,11 @@ where ua_us_id = 2;
 select ua.ua_date, ac.ac_name from user_achievements ua, achievements ac
 where ua.ua_ac_id = ac.ac_id and ua.ua_us_id = 2
 order by ua_date desc;
+
+-- ver as medalhas do user 2, pela data em ordem crescente
+select ua.ua_date, ac.ac_name from user_achievements ua, achievements ac
+where ua.ua_ac_id = ac.ac_id and ua.ua_us_id = 2
+order by ua_date;
 
 -- ver as medalhas de um user
 select ac.ac_name from user_achievements ua, achievements ac
