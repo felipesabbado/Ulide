@@ -16,7 +16,7 @@ create table routes (
 	rt_id serial
 		constraint routes_pk
 			primary key,
-	rt_name varchar(60),
+	rt_name varchar(60) not null,
 	rt_bio varchar(400),
 	rt_dist float
 );
@@ -80,6 +80,14 @@ create table fav_spots (
 			primary key,
 	fs_us_id int not null,
 	fs_sp_id int not null
+);
+
+create table fav_routes (
+    fr_id serial
+       constraint fav_routes_pk
+           primary key,
+    fr_us_id int not null,
+    fr_rt_id int not null
 );
 
 create table route_evaluations (
