@@ -9,9 +9,7 @@ create table tag_types
 
 create table tags
 (
-    tg_id serial
-        constraint tags_pk
-            primary key,
+    tg_id serial,
     tg_name varchar(30) not null,
     tg_tt_id int not null,
     primary key (tg_id),
