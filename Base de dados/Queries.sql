@@ -146,3 +146,7 @@ select ac.ac_name from user_achievements ua, achievements ac
 where ua.ua_ac_id = ac.ac_id and ua.ua_us_id = 2;
 
 --------------------------------------------- End Achievements ---------------------------------------------------------
+
+-- Testar Para Api
+
+select ac.ac_id, ua.ua_id, ac.ac_name, ua_ac_id, ua_date, ua_us_id from user_achievements ua, achievements ac where ua.ua_ac_id = ac.ac_id and ua.ua_us_id = 2
