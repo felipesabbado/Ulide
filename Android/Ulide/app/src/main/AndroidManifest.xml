@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ulide">
         <activity
+            android:name=".MainScreen2"
+            android:exported="true" />
+        <activity
             android:name=".MainScreen"
             android:exported="true" />
         <!--
