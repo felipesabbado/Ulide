@@ -99,6 +99,39 @@ values (4, 5, 16);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id)
 values (5, 5, 6);
 
+-------------------------- spots evaluations tests --------------------------
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 6, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 6, 2);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 6, 3);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 6, 4);
+
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 7, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 7, 2);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 7, 3);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (3, 7, 4);
+
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 8, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 8, 2);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 8, 3);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (3, 8, 4);
+
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (2, 9, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (3, 9, 2);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 9, 3);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 9, 4);
+
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (3, 10, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (2, 10, 2);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (2, 10, 3);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 10, 4);
+
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 11, 1);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (2, 11, 2);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 11, 3);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (3, 11, 4);
+
+------------------------ end spots evaluations tests ------------------------
+
 insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (1, 2, 1);
 insert into users_spots_tags(ust_sp_id, ust_tg_id, ust_us_id) values (1, 7, 3);
 
@@ -232,6 +265,37 @@ values (2, 4, 4);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id)
 values (4, 5, 2);
 
+-------------------------- routes evaluations tests ------------------------------
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (1, 6, 1);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 6, 4);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 7, 1);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 7, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 7, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 7, 4);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 8, 1);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 8, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 8, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 8, 4);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 9, 1);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 9, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 9, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 9, 4);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 10, 1);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 10, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 10, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 10, 4);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 11, 1);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 11, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 11, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 11, 4);
+-------------------------- end routes evaluations tests --------------------------
 
 insert into done_routes(dr_us_id, dr_rt_id) values (2, 1);
 insert into done_routes(dr_us_id, dr_rt_id) values (3, 3);
