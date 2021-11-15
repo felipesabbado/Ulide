@@ -47,22 +47,38 @@ insert into users(us_name, us_bdate, us_gender)
 values ('Nicolau Esteves', to_date('2001-10-01', 'YYYY-MM-DD'), 'M');
 
 -- true is paid, false is free
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Torre de Belém', 38.69175116131192, -9.215966573567318, false);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Mosteiro dos Jerónimos', 38.69806671988026, -9.206671715894556, false);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Castelo de São Jorge', 38.71405986610344, -9.133454744730386, true);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Padrão dos Descobrimentos', 38.6936015,-9.2079002, false);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Museu da Cidade', 38.7585930361228, -9.156325382521535, true);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Elevador da Glória', 38.716897389128455, -9.142660122889284, true);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Estádio da Luz', 38.752886685013436, -9.184763273565512, true);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Oceanário', 38.76371079269964, -9.093720044728894, true);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Praça do Comércio', 38.70759494492502, -9.13644380826236, false);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Jardim Zoológico', 38.744495366088586, -9.170685015893174, true);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Panteão Nacional', 38.715061350403744, -9.12490880796462, false);
-insert into spots (sp_name, sp_lat, sp_long, sp_price) values('Mercado da Ribeira', 38.70690732582062, -9.145907544730553, false);
-insert into spots (sp_name, sp_lat, sp_long) values('Mercado do Príncipe Real', 38.716159660346214, -9.149212773566605);
-insert into spots (sp_name, sp_lat, sp_long) values('Mercado de Campo de Ourique', 38.707173108334246, -9.143361173566847);
-insert into spots (sp_name, sp_lat, sp_long) values('Lx Factory', 38.70366533341345, -9.178862273566953);
-insert into spots (sp_name, sp_lat, sp_long) values('Miradouro de Santa Catarina', 38.709725975239834, -9.147623365894209);
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio) 
+values('Torre de Belém', 38.69175116131192, -9.215966573567318, false, 'Biografia de teste 01');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Mosteiro dos Jerónimos', 38.69806671988026, -9.206671715894556, false, 'Biografia de teste 02');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Castelo de São Jorge', 38.71405986610344, -9.133454744730386, true, 'Biografia de teste 03');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Padrão dos Descobrimentos', 38.6936015,-9.2079002, false, 'Biografia de teste 04');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Museu da Cidade', 38.7585930361228, -9.156325382521535, true, 'Biografia de teste 05');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Elevador da Glória', 38.716897389128455, -9.142660122889284, true, 'Biografia de teste 06');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Estádio da Luz', 38.752886685013436, -9.184763273565512, true, 'Biografia de teste 07');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Oceanário', 38.76371079269964, -9.093720044728894, true, 'Biografia de teste 08');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Praça do Comércio', 38.70759494492502, -9.13644380826236, false, 'Biografia de teste 09');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Jardim Zoológico', 38.744495366088586, -9.170685015893174, true, 'Biografia de teste 10');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Panteão Nacional', 38.715061350403744, -9.12490880796462, false, 'Biografia de teste 11');
+insert into spots (sp_name, sp_lat, sp_long, sp_price, sp_bio)
+values('Mercado da Ribeira', 38.70690732582062, -9.145907544730553, false, 'Biografia de teste 12');
+insert into spots (sp_name, sp_lat, sp_long, sp_bio)
+values('Mercado do Príncipe Real', 38.716159660346214, -9.149212773566605, 'Biografia de teste 13');
+insert into spots (sp_name, sp_lat, sp_long, sp_bio)
+values('Mercado de Campo de Ourique', 38.707173108334246, -9.143361173566847, 'Biografia de teste 14');
+insert into spots (sp_name, sp_lat, sp_long, sp_bio)
+values('Lx Factory', 38.70366533341345, -9.178862273566953, 'Biografia de teste 15');
+insert into spots (sp_name, sp_lat, sp_long, sp_bio)
+values('Miradouro de Santa Catarina', 38.709725975239834, -9.147623365894209, 'Biografia de teste 16');
 
 
 insert into spot_evaluations(se_rate, se_comment, se_us_id, se_sp_id)
@@ -104,11 +120,19 @@ insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 6, 1);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 6, 2);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 6, 3);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 6, 4);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 6, 6);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 6, 12);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 6, 13);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 6, 15);
 
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 7, 1);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 7, 2);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 7, 3);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (3, 7, 4);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 7, 6);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 7, 12);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (5, 7, 13);
+insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 7, 15);
 
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (4, 8, 1);
 insert into spot_evaluations(se_rate, se_us_id, se_sp_id) values (1, 8, 2);
@@ -266,35 +290,33 @@ insert into route_evaluations(re_rate, re_us_id, re_rt_id)
 values (4, 5, 2);
 
 -------------------------- routes evaluations tests ------------------------------
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (1, 6, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 6, 4);
-
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 1);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 7, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 7, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 7, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 7, 4);
-
 insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 8, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 8, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 8, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 8, 4);
-
 insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 9, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 9, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 9, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 9, 4);
-
 insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 10, 1);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 10, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 10, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 10, 4);
-
 insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 11, 1);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 7, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 8, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 9, 2);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 10, 2);
 insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (2, 11, 2);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 11, 3);
-insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 11, 4);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 6, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 7, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 8, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 9, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (5, 10, 3);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 11, 3);
+
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 6, 4);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 7, 4);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 8, 4);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 9, 4);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (4, 10, 4);
+insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 11, 4);
 -------------------------- end routes evaluations tests --------------------------
 
 insert into done_routes(dr_us_id, dr_rt_id) values (2, 1);
