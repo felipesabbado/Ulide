@@ -1,10 +1,12 @@
-package com.example.ulide;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.ulide.Actvities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ulide.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MainMenu(View view) {
-        Intent mainMenu = new Intent(getApplicationContext(), MainScreen.class);
+        Intent mainMenu = new Intent(getApplicationContext(), MainScreenActivity.class);
         startActivity(mainMenu);
     }
 }
