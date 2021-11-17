@@ -8,10 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.example.ulide2.downloads.DownloadTask;
 import com.example.ulide2.downloads.RoutesDownloads;
 
 import org.json.JSONArray;
@@ -24,10 +22,10 @@ import java.util.concurrent.ExecutionException;
 public class RoutesMenu extends AppCompatActivity {
 
     ListView listViewRoutes;
-    ArrayList<String> arrayListRoutes;
-    ArrayList<String> arrayListRoutesId;
+    ArrayList<String> routes;
+    ArrayList<String> routesId;
     ArrayAdapter<String> adapterRoutes;
-    JSONArray objUsTu = null;
+    JSONArray objRoutesAvg = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,39 +35,39 @@ public class RoutesMenu extends AppCompatActivity {
 
         listViewRoutes = findViewById(R.id.ListViewPopularRoutes);
 
-
-
         RoutesDownloads task = new RoutesDownloads();
         try {
-            objUsTu = task.execute("https://ulide.herokuapp.com/api/routes/avg").get();
+            objRoutesAvg = task.execute("https://ulide.herokuapp.com/api/routes/avg").get();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
-            objUsTu = null;
+            objRoutesAvg = null;
         }
 
         JSONObject obj;
-        arrayListRoutes = new ArrayList<>();
-        arrayListRoutesId = new ArrayList<>();
-        if(objUsTu != null) {
-            for(int i = 0; i < objUsTu.length(); i++) {
+        routes = new ArrayList<>();
+        routesId = new ArrayList<>();
+        if(objRoutesAvg != null) {
+            for(int i = 0; i < objRoutesAvg.length(); i++) {
                 try {
-                    obj = objUsTu.getJSONObject(i);
-                    arrayListRoutes.add(obj.getString("rtName"));
-                    arrayListRoutesId.add(obj.getString("id"));
+                    obj = objRoutesAvg.getJSONObject(i);
+                    double routesAvg = Double.parseDouble(obj.getString("rtAvg"));
+                    String routesName = obj.getString("rtName");
+                    routes.add(String.format("%s - Rate: %.2f", routesName, routesAvg));
+                    routesId.add(obj.getString("id"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-            Log.e("Array List", arrayListRoutes.toString());
+            Log.e("Array List", routes.toString());
             InitializeAdapter();
         }
     }
 
 
     public void InitializeAdapter(){
-        adapterRoutes = new ArrayAdapter<String>(this, android.R.layout.activity_list_item, arrayListRoutes);
+        adapterRoutes = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, routes);
         listViewRoutes.setAdapter(adapterRoutes);
-        createListViewClickItemEvent(listViewRoutes, arrayListRoutes, arrayListRoutesId);
+        createListViewClickItemEvent(listViewRoutes, routes, routesId);
     }
     
     private void createListViewClickItemEvent(ListView list, final ArrayList<String> items,
