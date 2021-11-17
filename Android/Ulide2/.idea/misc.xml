@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fsabb/AdroidStudioProjects/Ulide2/app/src/main/res/layout/activity_routes_menu.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/fsabb/AdroidStudioProjects/Ulide2/app/src/main/res/layout/activity_spots_menu.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leona/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_list_item_1.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide2/app/src/main/res/drawable/ic_clear.xml" value="0.3765625" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide2/app/src/main/res/layout/activity_create_spots_menu.xml" value="0.35625" />
@@ -13,7 +15,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

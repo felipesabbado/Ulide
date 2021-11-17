@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ulide2">
         <activity
+            android:name=".SpotsMenu"
+            android:exported="true" />
+        <activity
             android:name=".CreateSpotsMenu"
             android:exported="true" />
         <activity
