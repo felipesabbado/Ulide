@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -64,6 +65,15 @@ public class RoutesMenu extends AppCompatActivity {
     public void InitializeAdapter(){
         adapterRoutes = new ArrayAdapter<String>(this, android.R.layout.activity_list_item, arrayListRoutes);
         listViewRoutes.setAdapter(adapterRoutes);
+        createListViewClickItemEvent(listViewRoutes, arrayListRoutes);
     }
-
+    
+    private void createListViewClickItemEvent(ListView list, final ArrayList<String> items) {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.e("INFO", "O nome da rota é: " + items.get(i));
+            }
+        });
+    }
 }
