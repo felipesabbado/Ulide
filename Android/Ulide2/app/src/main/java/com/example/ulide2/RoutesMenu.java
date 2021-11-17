@@ -35,6 +35,8 @@ public class RoutesMenu extends AppCompatActivity {
 
         listViewRoutes = findViewById(R.id.ListViewPopularRoutes);
 
+
+
         RoutesDownloads task = new RoutesDownloads();
         try {
             objUsTu = task.execute("https://ulide.herokuapp.com/api/routes").get();
@@ -61,7 +63,7 @@ public class RoutesMenu extends AppCompatActivity {
 
 
     public void InitializeAdapter(){
-        adapterRoutes = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListRoutes);
+        adapterRoutes = new ArrayAdapter<String>(this, android.R.layout.activity_list_item, arrayListRoutes);
         listViewRoutes.setAdapter(adapterRoutes);
         createListViewClickItemEvent(listViewRoutes, arrayListRoutes);
     }
