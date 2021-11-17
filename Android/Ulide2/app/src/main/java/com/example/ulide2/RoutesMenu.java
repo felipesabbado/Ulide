@@ -50,7 +50,7 @@ public class RoutesMenu extends AppCompatActivity {
             for(int i = 0; i < objRoutesAvg.length(); i++) {
                 try {
                     obj = objRoutesAvg.getJSONObject(i);
-                    double routesAvg = Double.parseDouble(obj.getString("rtAvg"));
+                    double routesAvg = obj.getDouble("rtAvg");
                     String routesName = obj.getString("rtName");
                     routes.add(String.format("%s - Rate: %.2f", routesName, routesAvg));
                     routesId.add(obj.getString("id"));
