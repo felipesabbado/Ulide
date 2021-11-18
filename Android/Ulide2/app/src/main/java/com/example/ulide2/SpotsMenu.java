@@ -31,7 +31,6 @@ public class SpotsMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spots_menu);
-        setTitle("Spots");
 
         listViewRouteSpots = findViewById(R.id.ListViewRouteSpots);
 
@@ -62,6 +61,8 @@ public class SpotsMenu extends AppCompatActivity {
             Log.e("SPOTS", spots.toString());
             InitalizeAdapter();
         }
+
+        setTitle(intent.getStringExtra("name"));
     }
 
     public void InitalizeAdapter() {
