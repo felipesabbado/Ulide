@@ -219,7 +219,6 @@ insert into fav_spots(fs_us_id, fs_sp_id) values (4, 1);
 insert into fav_spots(fs_us_id, fs_sp_id) values (4, 2);
 insert into fav_spots(fs_us_id, fs_sp_id) values (4, 4);
 insert into fav_spots(fs_us_id, fs_sp_id) values (4, 10);
-insert into fav_spots(fs_us_id, fs_sp_id) values (4, 14);
 
 insert into fav_spots(fs_us_id, fs_sp_id) values (5, 8);
 insert into fav_spots(fs_us_id, fs_sp_id) values (5, 9);
@@ -320,7 +319,9 @@ insert into route_evaluations(re_rate, re_us_id, re_rt_id) values (3, 11, 4);
 -------------------------- end routes evaluations tests --------------------------
 
 insert into done_routes(dr_us_id, dr_rt_id) values (2, 1);
+insert into done_routes(dr_us_id, dr_rt_id) values (3, 1);
 insert into done_routes(dr_us_id, dr_rt_id) values (3, 3);
+insert into done_routes(dr_us_id, dr_rt_id) values (4, 1);
 insert into done_routes(dr_us_id, dr_rt_id) values (4, 4);
 insert into done_routes(dr_us_id, dr_rt_id) values (5, 2);
 
