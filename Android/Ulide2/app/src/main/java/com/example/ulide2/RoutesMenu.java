@@ -24,6 +24,7 @@ public class RoutesMenu extends AppCompatActivity {
     ListView listViewRoutes;
     ArrayList<String> routes;
     ArrayList<String> routesId;
+    ArrayList<String> routesName;
     ArrayAdapter<String> adapterRoutes;
     JSONArray objRoutesAvg = null;
 
@@ -46,14 +47,16 @@ public class RoutesMenu extends AppCompatActivity {
         JSONObject obj;
         routes = new ArrayList<>();
         routesId = new ArrayList<>();
+        routesName = new ArrayList<>();
         if(objRoutesAvg != null) {
             for(int i = 0; i < objRoutesAvg.length(); i++) {
                 try {
                     obj = objRoutesAvg.getJSONObject(i);
                     double routesAvg = obj.getDouble("rtAvg");
-                    String routesName = obj.getString("rtName");
-                    routes.add(String.format("%s - Rate: %.2f", routesName, routesAvg));
+                    String routeName = obj.getString("rtName");
+                    routes.add(String.format("%s - Rate: %.2f", routeName, routesAvg));
                     routesId.add(obj.getString("id"));
+                    routesName.add(obj.getString("rtName"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -67,11 +70,11 @@ public class RoutesMenu extends AppCompatActivity {
     public void InitializeAdapter(){
         adapterRoutes = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, routes);
         listViewRoutes.setAdapter(adapterRoutes);
-        createListViewClickItemEvent(listViewRoutes, routes, routesId);
+        createListViewClickItemEvent(listViewRoutes, routes, routesId, routesName);
     }
     
     private void createListViewClickItemEvent(ListView list, final ArrayList<String> items,
-                                              final ArrayList<String> id) {
+                                              final ArrayList<String> id, final ArrayList<String> name) {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -79,6 +82,7 @@ public class RoutesMenu extends AppCompatActivity {
                 Log.e("INFO", "O id da rota é: " + id.get(i));
                 Intent spotsMenu = new Intent(getApplicationContext(), SpotsMenu.class);
                 spotsMenu.putExtra("id", id.get(i));
+                spotsMenu.putExtra("name", name.get(i));
                 startActivity(spotsMenu);
             }
         });
