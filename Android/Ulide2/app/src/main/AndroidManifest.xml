@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ulide2">
         <activity
+            android:name=".TestActivity.Spiners"
+            android:exported="true" />
+        <activity
             android:name=".SpotInfoMenu"
             android:exported="true" />
         <activity
