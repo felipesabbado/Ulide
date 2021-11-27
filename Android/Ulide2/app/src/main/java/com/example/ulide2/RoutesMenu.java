@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class RoutesMenu extends AppCompatActivity {
-
     ListView listViewRoutes;
     ArrayList<String> routes;
     ArrayList<String> routesId;
     ArrayList<String> routesName;
     ArrayAdapter<String> adapterRoutes;
     JSONArray objRoutesAvg = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

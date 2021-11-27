@@ -1,4 +1,4 @@
-package com.example.ulide;
+package com.example.ulide.ui.home;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ulide.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -29,11 +30,17 @@ public class MapsHomeFragment extends Fragment {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
+        private GoogleMap mMap;
+
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            mMap = googleMap;
+
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+            // Add a marker in Sydney and move the camera
+            LatLng lisbon = new LatLng(38.736946, -9.142685);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 13));
         }
     };
 
