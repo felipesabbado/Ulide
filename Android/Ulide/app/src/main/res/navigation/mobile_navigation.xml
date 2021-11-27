@@ -26,5 +26,10 @@
         android:name="com.example.ulide.ui.list.RoutesFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_routes_list" />
+    <fragment
+        android:id="@+id/spotsFromRouteFragment"
+        android:name="com.example.ulide.ui.spotsFromRoute.SpotsFromRouteFragment"
+        android:label="spots_from_route_fragment"
+        tools:layout="@layout/spots_from_route_fragment" />
 
 </navigation>
