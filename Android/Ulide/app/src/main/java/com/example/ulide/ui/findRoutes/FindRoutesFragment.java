@@ -1,4 +1,4 @@
-package com.example.ulide.ui.slideshow;
+package com.example.ulide.ui.findRoutes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ulide.R;
-import com.example.ulide.databinding.FragmentSlideshowBinding;
+import com.example.ulide.databinding.FragmentFindRoutesBinding;
 
-public class SlideshowFragment extends Fragment {
+public class FindRoutesFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private FindRoutesViewModel findRoutesViewModel;
+    private FragmentFindRoutesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        findRoutesViewModel =
+                new ViewModelProvider(this).get(FindRoutesViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentFindRoutesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textGallery;
+        findRoutesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

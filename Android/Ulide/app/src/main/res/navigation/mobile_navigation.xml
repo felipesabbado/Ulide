@@ -3,23 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_my_profile">
 
+    <fragment
+        android:id="@+id/nav_my_profile"
+        android:name="com.example.ulide.ui.myProfile.MyProfileFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_my_profile" />
+
+    <fragment
+        android:id="@+id/nav_find_routes"
+        android:name="com.example.ulide.ui.findRoutes.FindRoutesFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_find_routes" />
+
+    <fragment
+        android:id="@+id/nav_creat_spots"
+        android:name="com.example.ulide.ui.creatSpots.CreateSpotsFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_creat_spots" />
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.ulide.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.ulide.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.ulide.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.example.ulide.ui.myProfile.MyProfileFragment"
+        android:label="@string/menu_home1"
+        tools:layout="@layout/fragment_my_profile" />
 </navigation>
