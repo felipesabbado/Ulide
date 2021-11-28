@@ -27,9 +27,7 @@
         <action
             android:id="@+id/action_nav_find_routes_to_nav_spots_from_route"
             app:destination="@id/nav_spots_from_route" />
-        <action
-            android:id="@+id/action_nav_find_routes_to_nav_test2"
-            app:destination="@id/nav_test" />
+
     </fragment>
 
     <fragment
@@ -44,11 +42,7 @@
         android:label="@string/menu_spots"
         tools:layout="@layout/fragment_spots_from_route" />
 
-    <fragment
-        android:id="@+id/nav_test"
-        android:name="com.example.ulide.ui.test.TestFragment"
-        android:label="test"
-        tools:layout="@layout/fragment_test" />
+
 
 
 </navigation>

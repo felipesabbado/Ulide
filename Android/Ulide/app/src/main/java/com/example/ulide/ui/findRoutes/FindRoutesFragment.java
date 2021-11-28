@@ -62,7 +62,7 @@ public class FindRoutesFragment extends Fragment {
                         SpotsFromRouteFragment.putExtra("name", routesName.get(i));
 
                         //https://www.codegrepper.com/code-examples/java/intent+to+move+from+one+fragment+to+another+fragment+in+android
-                        Navigation.findNavController(view).navigate(R.id.action_nav_find_routes_to_nav_test2);
+                        Navigation.findNavController(view).navigate(R.id.action_nav_find_routes_to_nav_spots_from_route);
 
 
 //                        1)
