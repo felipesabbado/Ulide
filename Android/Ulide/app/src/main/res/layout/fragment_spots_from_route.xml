@@ -5,10 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.spotsFromRoute.SpotsFromRouteFragment">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Batatatas batatolas" />
+    <ListView
+        android:id="@+id/listViewSpots"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

@@ -1,66 +1,81 @@
 package com.example.ulide.ui.spotsFromRoute;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import com.example.ulide.R;
+import com.example.ulide.databinding.FragmentSpotsFromRouteBinding;
+import com.example.ulide.downloaders.JSONArrayDownloader;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SpotsFromRouteFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+
 public class SpotsFromRouteFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentSpotsFromRouteBinding binding;
+    private ListView listViewSpots;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ArrayAdapter<String> adapterSpots;
+    private ArrayList<String> spots;
+    private ArrayList<String> spotsId;
+    private JSONArray spotsArray;
 
     public SpotsFromRouteFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SpotsFromRouteFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SpotsFromRouteFragment newInstance(String param1, String param2) {
-        SpotsFromRouteFragment fragment = new SpotsFromRouteFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_spots_from_route, container, false);
+        binding = FragmentSpotsFromRouteBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        listViewSpots = binding.listViewSpots;
+        JSONArrayDownloader task = new JSONArrayDownloader();
+        Intent intent = getActivity().getIntent();
+        String id = intent.getStringExtra("id");
+        String url = "https://ulide.herokuapp.com/api/routes/" + id + "/spots";
+        try {
+            spotsArray = task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            spotsArray = null;
+        }
+
+        JSONObject obj;
+        spots = new ArrayList<>();
+        spotsId = new ArrayList<>();
+        if (spotsArray != null) {
+            for (int i = 0; i < spotsArray.length(); i++) {
+                try {
+                    obj = spotsArray.getJSONObject(i);
+                    spots.add(obj.getString("spName"));
+                    spotsId.add(obj.getString("id"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            Log.e("SPOTS", spots.toString());
+            InitalizeAdapter();
+        }
+
+        return root;
+    }
+
+    public void InitalizeAdapter() {
+        adapterSpots = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, spots);
+        listViewSpots.setAdapter(adapterSpots);
     }
 }

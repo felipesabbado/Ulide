@@ -31,7 +31,6 @@ import java.util.concurrent.ExecutionException;
 
 public class MyProfileFragment extends Fragment {
 
-    private MyProfileViewModel myProfileViewModel;
     private FragmentMyProfileBinding binding;
 
 
@@ -39,24 +38,11 @@ public class MyProfileFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        myProfileViewModel =
-                new ViewModelProvider(this).get(MyProfileViewModel.class);
-
         binding = FragmentMyProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
-
-        myProfileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-
-            }
-        });
         return root;
     }
-
-
 
     @Override
     public void onDestroyView() {
