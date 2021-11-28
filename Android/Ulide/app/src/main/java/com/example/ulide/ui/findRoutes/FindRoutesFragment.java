@@ -93,9 +93,11 @@ public class FindRoutesFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.e("INFO", item.get(i));
                 Log.e("INFO", id.get(i));
-                Intent spots = new Intent(getContext(), SpotsFromRouteFragment.class);
-                spots.putExtra("id", id.get(i));
-                spots.putExtra("name", name.get(i));
+                //https://developer.android.com/guide/fragments/communicate
+                Bundle result = new Bundle();
+                result.putString("id", id.get(i));
+                result.putString("name", name.get(i));
+                getParentFragmentManager().setFragmentResult("route", result);
 
                 //https://www.codegrepper.com/code-examples/java/intent+to+move+from+one+fragment+to+another+fragment+in+android
                 Navigation.findNavController(view)

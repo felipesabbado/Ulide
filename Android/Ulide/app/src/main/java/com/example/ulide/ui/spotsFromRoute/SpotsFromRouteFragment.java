@@ -3,7 +3,9 @@ package com.example.ulide.ui.spotsFromRoute;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import android.widget.ListView;
 
 import com.example.ulide.databinding.FragmentSpotsFromRouteBinding;
 import com.example.ulide.downloaders.JSONArrayDownloader;
+import com.example.ulide.ui.findRoutes.FindRoutesFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,32 +47,41 @@ public class SpotsFromRouteFragment extends Fragment {
 
         listViewSpots = binding.listViewSpots;
         JSONArrayDownloader task = new JSONArrayDownloader();
-        Intent intent = getActivity().getIntent();
-        String id = intent.getStringExtra("id");
-        String url = "https://ulide.herokuapp.com/api/routes/" + id + "/spots";
-        try {
-            spotsArray = task.execute(url).get();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-            spotsArray = null;
-        }
 
-        JSONObject obj;
-        spots = new ArrayList<>();
-        spotsId = new ArrayList<>();
-        if (spotsArray != null) {
-            for (int i = 0; i < spotsArray.length(); i++) {
+        getParentFragmentManager().setFragmentResultListener("route", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
+                // We use a String here, but any type that can be put in a Bundle is supported
+                String id = bundle.getString("id");
+                String name = bundle.getString("name");
+                // Do something with the result
+                String url = "https://ulide.herokuapp.com/api/routes/" + id + "/spots";
                 try {
-                    obj = spotsArray.getJSONObject(i);
-                    spots.add(obj.getString("spName"));
-                    spotsId.add(obj.getString("id"));
-                } catch (JSONException e) {
+                    spotsArray = task.execute(url).get();
+                } catch (ExecutionException | InterruptedException e) {
                     e.printStackTrace();
+                    spotsArray = null;
+                }
+
+                JSONObject obj;
+                spots = new ArrayList<>();
+                spotsId = new ArrayList<>();
+                if (spotsArray != null) {
+                    for (int i = 0; i < spotsArray.length(); i++) {
+                        try {
+                            obj = spotsArray.getJSONObject(i);
+                            spots.add(obj.getString("spName"));
+                            spotsId.add(obj.getString("id"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Log.e("SPOTS", spots.toString());
+                    Log.i("INFO", name);
+                    InitalizeAdapter();
                 }
             }
-            Log.e("SPOTS", spots.toString());
-            InitalizeAdapter();
-        }
+        });
 
         return root;
     }
