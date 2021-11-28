@@ -39,14 +39,11 @@ public class MyProfileFragment extends Fragment {
     private MyProfileViewModel myProfileViewModel;
     private FragmentMyProfileBinding binding;
 
-
-    public ListView listViewRoutes;
     public ArrayList<String> routes;
     public ArrayList<String> routesId;
     public ArrayList<String> routesName;
     public ArrayAdapter<String> adapterRoutes;
     public JSONArray objRoutesAvg = null;
-    NavController navController;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

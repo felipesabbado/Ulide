@@ -8,32 +8,35 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.ulide.ui.home.MapsHomeFragment"
-        android:label="@string/menu_home1"
+        android:label="@string/menu_home"
         tools:layout="@layout/fragment_maps_home" />
     <fragment
         android:id="@+id/nav_test"
         android:name="com.example.ulide.ui.home.MapsHomeFragment"
-        android:label="@string/menu_home1"
+        android:label="@string/menu_home"
         tools:layout="@layout/fragment_maps_home" />
     <fragment
         android:id="@+id/nav_my_profile"
         android:name="com.example.ulide.ui.myProfile.MyProfileFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_my_profile" >
-        <action
-            android:id="@+id/action_nav_my_profile_to_spotsFromRouteFragment"
-            app:destination="@id/nav_spotsFromRouteFragment" />
-    </fragment>
+        android:label="@string/menu_myProfile"
+        tools:layout="@layout/fragment_my_profile" />
     <fragment
         android:id="@+id/nav_find_routes"
         android:name="com.example.ulide.ui.findRoutes.FindRoutesFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_find_routes" />
+        android:label="@string/menu_findRoutes"
+        tools:layout="@layout/fragment_find_routes" >
+        <action
+            android:id="@+id/action_nav_find_routes_to_nav_spotsFromRouteFragment"
+            app:destination="@id/nav_spotsFromRouteFragment" />
+        <action
+            android:id="@+id/action_nav_find_routes_to_nav_test"
+            app:destination="@id/nav_test" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_creat_spots"
         android:name="com.example.ulide.ui.list.RoutesFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_createSpots"
         tools:layout="@layout/fragment_routes_list" />
     <fragment
         android:id="@+id/nav_spotsFromRouteFragment"

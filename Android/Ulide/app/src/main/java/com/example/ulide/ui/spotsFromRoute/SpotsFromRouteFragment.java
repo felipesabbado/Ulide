@@ -44,13 +44,16 @@ public class SpotsFromRouteFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        final ListView listViewRouteSpots = binding.ListViewRouteSpots;
+        listViewRouteSpots = binding.listSpots;
 
         spotsFromRouteViewModel =
                 new ViewModelProvider(this).get(SpotsFromRouteViewModel.class);
 
         binding = SpotsFromRouteFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        InicializeListView();
+        listViewRouteSpots.setAdapter(adapterSpots);
 
 
         return root;
@@ -83,7 +86,6 @@ public class SpotsFromRouteFragment extends Fragment {
             }
             Log.e("SPOTS", spots.toString());
             adapterSpots = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, spots);
-            listViewRouteSpots.setAdapter(adapterSpots);
         }
     }
 

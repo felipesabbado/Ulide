@@ -7,22 +7,22 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="@string/menu_home1" />
+            android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_my_profile"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_myProfile" />
         <item
             android:id="@+id/nav_find_routes"
             android:icon="@drawable/ic_find_route"
-            android:title="@string/menu_gallery" />
+            android:title="@string/menu_findRoutes" />
         <item
             android:id="@+id/nav_creat_spots"
             android:icon="@drawable/ic_creat_spot"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/menu_createSpots" />
         <item
             android:id="@+id/nav_test"
             android:icon="@drawable/ic_creat_spot"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/menu_createSpots" />
     </group>
 </menu>
