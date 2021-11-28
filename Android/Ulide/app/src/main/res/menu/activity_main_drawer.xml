@@ -20,5 +20,9 @@
             android:id="@+id/nav_creat_spots"
             android:icon="@drawable/ic_creat_spot"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_test"
+            android:icon="@drawable/ic_creat_spot"
+            android:title="@string/menu_slideshow" />
     </group>
 </menu>

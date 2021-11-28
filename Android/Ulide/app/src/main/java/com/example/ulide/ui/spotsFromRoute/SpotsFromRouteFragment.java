@@ -53,11 +53,6 @@ public class SpotsFromRouteFragment extends Fragment {
         View root = binding.getRoot();
 
 
-
-
-
-
-
         return root;
     }
 

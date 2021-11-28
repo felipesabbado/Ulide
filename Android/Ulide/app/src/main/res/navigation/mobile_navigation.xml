@@ -11,10 +11,19 @@
         android:label="@string/menu_home1"
         tools:layout="@layout/fragment_maps_home" />
     <fragment
+        android:id="@+id/nav_test"
+        android:name="com.example.ulide.ui.home.MapsHomeFragment"
+        android:label="@string/menu_home1"
+        tools:layout="@layout/fragment_maps_home" />
+    <fragment
         android:id="@+id/nav_my_profile"
         android:name="com.example.ulide.ui.myProfile.MyProfileFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_my_profile" />
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_nav_my_profile_to_spotsFromRouteFragment"
+            app:destination="@id/nav_spotsFromRouteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_find_routes"
         android:name="com.example.ulide.ui.findRoutes.FindRoutesFragment"
@@ -27,7 +36,7 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_routes_list" />
     <fragment
-        android:id="@+id/spotsFromRouteFragment"
+        android:id="@+id/nav_spotsFromRouteFragment"
         android:name="com.example.ulide.ui.spotsFromRoute.SpotsFromRouteFragment"
         android:label="spots_from_route_fragment"
         tools:layout="@layout/spots_from_route_fragment" />

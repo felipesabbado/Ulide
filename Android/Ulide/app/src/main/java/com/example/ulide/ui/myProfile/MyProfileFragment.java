@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.SurfaceControl;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,10 +18,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentMyProfileBinding;
 import com.example.ulide.downloaders.JSONArrayDownloader;
+import com.example.ulide.ui.home.MapsHomeFragment;
 import com.example.ulide.ui.spotsFromRoute.SpotsFromRouteFragment;
 
 import org.json.JSONArray;
@@ -42,6 +46,7 @@ public class MyProfileFragment extends Fragment {
     public ArrayList<String> routesName;
     public ArrayAdapter<String> adapterRoutes;
     public JSONArray objRoutesAvg = null;
+    NavController navController;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -68,6 +73,14 @@ public class MyProfileFragment extends Fragment {
                         SpotsFromRouteFragment.putExtra("id", routesId.get(i));
                         SpotsFromRouteFragment.putExtra("name", routesName.get(i));
 
+                        // Create new fragment and transaction
+                        FragmentManager fragmentManager = getParentFragmentManager();
+                        FragmentTransaction transaction = fragmentManager.beginTransaction();
+                        transaction.setReorderingAllowed(true);
+
+                        transaction.replace(R.id.nav_spotsFromRouteFragment, SpotsFromRouteFragment.class, null);
+
+                        transaction.commit();
                     }
                 });
             }
