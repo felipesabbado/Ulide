@@ -11,11 +11,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_maps_home" />
     <fragment
-        android:id="@+id/nav_test"
-        android:name="com.example.ulide.ui.home.MapsHomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_maps_home" />
-    <fragment
         android:id="@+id/nav_my_profile"
         android:name="com.example.ulide.ui.myProfile.MyProfileFragment"
         android:label="@string/menu_myProfile"
@@ -25,11 +20,15 @@
         android:name="com.example.ulide.ui.findRoutes.FindRoutesFragment"
         android:label="@string/menu_findRoutes"
         tools:layout="@layout/fragment_find_routes" >
+
         <action
-            android:id="@+id/action_nav_find_routes_to_nav_spotsFromRouteFragment"
-            app:destination="@id/nav_spotsFromRouteFragment" />
+            android:id="@+id/action_nav_find_routes_to_nav_creat_spots"
+            app:destination="@id/nav_creat_spots" />
         <action
-            android:id="@+id/action_nav_find_routes_to_nav_test"
+            android:id="@+id/action_nav_find_routes_to_nav_spots_from_route"
+            app:destination="@id/nav_spots_from_route" />
+        <action
+            android:id="@+id/action_nav_find_routes_to_nav_test2"
             app:destination="@id/nav_test" />
     </fragment>
 
@@ -38,10 +37,18 @@
         android:name="com.example.ulide.ui.list.RoutesFragment"
         android:label="@string/menu_createSpots"
         tools:layout="@layout/fragment_routes_list" />
+
     <fragment
-        android:id="@+id/nav_spotsFromRouteFragment"
+        android:id="@+id/nav_spots_from_route"
         android:name="com.example.ulide.ui.spotsFromRoute.SpotsFromRouteFragment"
-        android:label="spots_from_route_fragment"
-        tools:layout="@layout/spots_from_route_fragment" />
+        android:label="@string/menu_spots"
+        tools:layout="@layout/fragment_spots_from_route" />
+
+    <fragment
+        android:id="@+id/nav_test"
+        android:name="com.example.ulide.ui.test.TestFragment"
+        android:label="test"
+        tools:layout="@layout/fragment_test" />
+
 
 </navigation>

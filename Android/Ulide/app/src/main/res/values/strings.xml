@@ -11,6 +11,7 @@
     <string name="menu_myProfile">My profile</string>
     <string name="menu_findRoutes">Find Routes</string>
     <string name="menu_createSpots">Create Spots</string>
+    <string name="menu_spots">Spots</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

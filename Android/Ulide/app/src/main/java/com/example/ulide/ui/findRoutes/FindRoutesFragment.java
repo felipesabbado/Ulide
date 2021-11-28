@@ -9,25 +9,17 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.example.ulide.MainActivity;
 import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentFindRoutesBinding;
-import com.example.ulide.databinding.SpotsFromRouteFragmentBinding;
 import com.example.ulide.downloaders.JSONArrayDownloader;
-import com.example.ulide.ui.home.MapsHomeFragment;
-import com.example.ulide.ui.spotsFromRoute.SpotsFromRouteFragment;
-import com.example.ulide.ui.spotsFromRoute.SpotsFromRouteViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -69,7 +61,8 @@ public class FindRoutesFragment extends Fragment {
                         SpotsFromRouteFragment.putExtra("id", routesId.get(i));
                         SpotsFromRouteFragment.putExtra("name", routesName.get(i));
 
-                        Navigation.findNavController(view).navigate(R.id.action_nav_find_routes_to_nav_test);
+                        //https://www.codegrepper.com/code-examples/java/intent+to+move+from+one+fragment+to+another+fragment+in+android
+                        Navigation.findNavController(view).navigate(R.id.action_nav_find_routes_to_nav_test2);
 
 
 //                        1)
