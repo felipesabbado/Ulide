@@ -46,7 +46,7 @@ public class SpotsFromRouteFragment extends Fragment {
         View root = binding.getRoot();
 
         listViewSpots = binding.listViewSpots;
-        JSONArrayDownloader task = new JSONArrayDownloader();
+
 
         getParentFragmentManager().setFragmentResultListener("route", this, new FragmentResultListener() {
             @Override
@@ -55,35 +55,40 @@ public class SpotsFromRouteFragment extends Fragment {
                 String id = bundle.getString("id");
                 String name = bundle.getString("name");
                 // Do something with the result
-                String url = "https://ulide.herokuapp.com/api/routes/" + id + "/spots";
-                try {
-                    spotsArray = task.execute(url).get();
-                } catch (ExecutionException | InterruptedException e) {
-                    e.printStackTrace();
-                    spotsArray = null;
-                }
-
-                JSONObject obj;
-                spots = new ArrayList<>();
-                spotsId = new ArrayList<>();
-                if (spotsArray != null) {
-                    for (int i = 0; i < spotsArray.length(); i++) {
-                        try {
-                            obj = spotsArray.getJSONObject(i);
-                            spots.add(obj.getString("spName"));
-                            spotsId.add(obj.getString("id"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    Log.e("SPOTS", spots.toString());
-                    Log.i("INFO", name);
-                    InitalizeAdapter();
-                }
+                getJSON(id,name);
             }
         });
 
         return root;
+    }
+
+    public void getJSON(String id, String name){
+        JSONArrayDownloader task = new JSONArrayDownloader();
+        String url = "https://ulide.herokuapp.com/api/routes/" + id + "/spots";
+        try {
+            spotsArray = task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            spotsArray = null;
+        }
+
+        JSONObject obj;
+        spots = new ArrayList<>();
+        spotsId = new ArrayList<>();
+        if (spotsArray != null) {
+            for (int i = 0; i < spotsArray.length(); i++) {
+                try {
+                    obj = spotsArray.getJSONObject(i);
+                    spots.add(obj.getString("spName"));
+                    spotsId.add(obj.getString("id"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            Log.e("SPOTS", spots.toString());
+            Log.i("INFO", name);
+            InitalizeAdapter();
+        }
     }
 
     public void InitalizeAdapter() {

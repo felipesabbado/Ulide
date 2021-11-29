@@ -22,17 +22,11 @@
         tools:layout="@layout/fragment_find_routes" >
 
         <action
-            android:id="@+id/action_nav_find_routes_to_nav_creat_spots"
-            app:destination="@id/nav_creat_spots"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
-            app:popEnterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right" />
-        <action
             android:id="@+id/action_nav_find_routes_to_nav_spots_from_route"
             app:destination="@id/nav_spots_from_route"
-            app:popEnterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popUpToInclusive="false" />
 
     </fragment>
 
