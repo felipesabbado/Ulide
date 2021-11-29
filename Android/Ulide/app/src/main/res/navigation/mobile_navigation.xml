@@ -43,6 +43,4 @@
         tools:layout="@layout/fragment_spots_from_route" />
 
 
-
-
 </navigation>

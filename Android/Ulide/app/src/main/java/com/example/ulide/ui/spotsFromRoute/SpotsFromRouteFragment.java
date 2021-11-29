@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.ulide.MainActivity;
 import com.example.ulide.databinding.FragmentSpotsFromRouteBinding;
 import com.example.ulide.downloaders.JSONArrayDownloader;
 import com.example.ulide.ui.findRoutes.FindRoutesFragment;
@@ -55,6 +56,9 @@ public class SpotsFromRouteFragment extends Fragment {
                 String id = bundle.getString("id");
                 String name = bundle.getString("name");
                 // Do something with the result
+                ((MainActivity) getActivity()).getSupportActionBar().setTitle(name);
+
+
                 getJSON(id,name);
             }
         });
