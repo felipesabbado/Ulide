@@ -16,24 +16,14 @@ import com.example.ulide.databinding.FragmentCreatSpotsBinding;
 
 public class CreateSpotsFragment extends Fragment {
 
-    private CreateSpotsViewModel createSpotsViewModel;
     private FragmentCreatSpotsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        createSpotsViewModel =
-                new ViewModelProvider(this).get(CreateSpotsViewModel.class);
 
         binding = FragmentCreatSpotsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        createSpotsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
