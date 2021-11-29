@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.ulide.MainActivity;
 import com.example.ulide.R;
@@ -24,6 +25,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
@@ -145,6 +147,36 @@ public class SpotsFromRouteFragment extends Fragment {
             }
             LatLng lisbon = new LatLng(38.736946, -9.142685);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 11));
+
+            // Set a listener for marker click.
+            mMap.setOnMarkerClickListener(clickListener);
+        }
+    };
+
+    private final GoogleMap.OnMarkerClickListener clickListener = new GoogleMap.OnMarkerClickListener() {
+        @Override
+        public boolean onMarkerClick(@NonNull Marker marker) {
+            for (int i = 0; i < spotsArray.length(); i++){
+                spotPos = new LatLng(Double.parseDouble(lat.get(i)), Double.parseDouble(lng.get(i)));
+                mMap.addMarker(new MarkerOptions().position(spotPos)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+            }
+            marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+
+            // Return false to indicate that we have not consumed the event and that we wish
+            // for the default behavior to occur (which is for the camera to move such that the
+            // marker is centered and for the marker's info window to open, if it has one).
+            return false;
+        }
+    };
+
+    private final GoogleMap.OnMarkerClickListener clickListener2 = new GoogleMap.OnMarkerClickListener() {
+        @Override
+        public boolean onMarkerClick(@NonNull Marker marker) {
+            // Return false to indicate that we have not consumed the event and that we wish
+            // for the default behavior to occur (which is for the camera to move such that the
+            // marker is centered and for the marker's info window to open, if it has one).
+            return false;
         }
     };
 
@@ -165,6 +197,8 @@ public class SpotsFromRouteFragment extends Fragment {
                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
                     }
                 }
+
+                mMap.setOnMarkerClickListener(clickListener2);
             }
         });
     }
