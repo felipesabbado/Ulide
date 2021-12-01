@@ -35,19 +35,18 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class SpotsFromRouteFragment extends Fragment {
+public class SpotsFromRouteFragment extends Fragment
+        implements GoogleMap.OnMarkerClickListener, OnMapReadyCallback {
 
     private FragmentSpotsFromRouteBinding binding;
     private ListView listViewSpots;
 
-    private ArrayAdapter<String> adapterSpots;
-    private ArrayList<String> spots;
+    private ArrayList<String> spotsName;
     private ArrayList<String> spotsId;
-    private ArrayList<String> lat;
-    private ArrayList<String> lng;
+    private ArrayList<LatLng> spotsPos;
+    private ArrayList<Marker> markers;
     private JSONArray spotsArray;
     private GoogleMap mMap;
-    private LatLng spotPos;
 
     public SpotsFromRouteFragment() {
         // Required empty public constructor
@@ -69,7 +68,7 @@ public class SpotsFromRouteFragment extends Fragment {
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
-            mapFragment.getMapAsync(callback);
+            mapFragment.getMapAsync(this);
         }
 
         setHasOptionsMenu(false);
@@ -105,100 +104,74 @@ public class SpotsFromRouteFragment extends Fragment {
         }
 
         JSONObject obj;
-        spots = new ArrayList<>();
+        spotsName = new ArrayList<>();
         spotsId = new ArrayList<>();
-        lat = new ArrayList<>();
-        lng = new ArrayList<>();
+        spotsPos = new ArrayList<>();
         if (spotsArray != null) {
             for (int i = 0; i < spotsArray.length(); i++) {
                 try {
                     obj = spotsArray.getJSONObject(i);
-                    spots.add(obj.getString("spName"));
+                    spotsName.add(obj.getString("spName"));
                     spotsId.add(obj.getString("id"));
-                    lat.add(obj.getString("spLat"));
-                    lng.add(obj.getString("spLong"));
+                    spotsPos.add(new LatLng(Double.parseDouble(obj.getString("spLat")),
+                            Double.parseDouble(obj.getString("spLong"))));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-            Log.e("SPOTS", spots.toString());
+            Log.e("SPOTS", spotsName.toString());
             Log.i("INFO", name);
             InitalizeAdapter();
         }
     }
 
     public void InitalizeAdapter() {
-        adapterSpots = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, spots);
+        ArrayAdapter<String> adapterSpots = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, spotsName);
         listViewSpots.setAdapter(adapterSpots);
-        createListViewClickItemEvent(listViewSpots, spots);
+        createListViewClickItemEvent(listViewSpots, spotsName);
     }
 
-    private final OnMapReadyCallback callback = new OnMapReadyCallback() {
-        @Override
-        public void onMapReady(GoogleMap googleMap) {
-            mMap = googleMap;
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
-            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-            // Add a marker in each spot
-            for(int i = 0; i < spotsArray.length(); i++){
-                spotPos = new LatLng(Double.parseDouble(lat.get(i)), Double.parseDouble(lng.get(i)));
-                mMap.addMarker(new MarkerOptions().position(spotPos).title(spots.get(i)));
-            }
-            LatLng lisbon = new LatLng(38.736946, -9.142685);
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 11));
-
-            // Set a listener for marker click.
-            mMap.setOnMarkerClickListener(clickListener);
+        // Add a marker in each spot
+        markers = new ArrayList<>();
+        for(int i = 0; i < spotsPos.size(); i++){
+            markers.add(mMap.addMarker(new MarkerOptions().position(spotsPos.get(i)).title(spotsName.get(i))));
         }
-    };
+        LatLng lisbon = new LatLng(38.736946, -9.142685);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 11));
 
-    private final GoogleMap.OnMarkerClickListener clickListener = new GoogleMap.OnMarkerClickListener() {
-        @Override
-        public boolean onMarkerClick(@NonNull Marker marker) {
-            for (int i = 0; i < spotsArray.length(); i++){
-                spotPos = new LatLng(Double.parseDouble(lat.get(i)), Double.parseDouble(lng.get(i)));
-                mMap.addMarker(new MarkerOptions().position(spotPos)
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-            }
-            marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        // Set a listener for marker click.
+        mMap.setOnMarkerClickListener(this);
+    }
 
-            // Return false to indicate that we have not consumed the event and that we wish
-            // for the default behavior to occur (which is for the camera to move such that the
-            // marker is centered and for the marker's info window to open, if it has one).
-            return false;
+    @Override
+    public boolean onMarkerClick(@NonNull Marker marker) {
+        for (int i = 0; i < markers.size(); i++){
+            markers.get(i).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         }
-    };
+        marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
 
-    private final GoogleMap.OnMarkerClickListener clickListener2 = new GoogleMap.OnMarkerClickListener() {
-        @Override
-        public boolean onMarkerClick(@NonNull Marker marker) {
-            // Return false to indicate that we have not consumed the event and that we wish
-            // for the default behavior to occur (which is for the camera to move such that the
-            // marker is centered and for the marker's info window to open, if it has one).
-            return false;
-        }
-    };
+        // Return false to indicate that we have not consumed the event and that we wish
+        // for the default behavior to occur (which is for the camera to move such that the
+        // marker is centered and for the marker's info window to open, if it has one).
+        return false;
+    }
 
     private void createListViewClickItemEvent(ListView list, final ArrayList<String> item) {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                spotPos = new LatLng(Double.parseDouble(lat.get(i)), Double.parseDouble(lng.get(i)));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(spotPos, 13.5f));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(spotsPos.get(i), 13.5f));
                 for (int k = 0; k < spotsArray.length(); k++){
-                    if (k != i){
-                        spotPos = new LatLng(Double.parseDouble(lat.get(k)), Double.parseDouble(lng.get(k)));
-                        mMap.addMarker(new MarkerOptions().position(spotPos)
-                                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                    } else {
-                        spotPos = new LatLng(Double.parseDouble(lat.get(i)), Double.parseDouble(lng.get(i)));
-                        mMap.addMarker(new MarkerOptions().position(spotPos)
-                                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                    }
+                    markers.get(k)
+                            .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                 }
-
-                mMap.setOnMarkerClickListener(clickListener2);
+                markers.get(i)
+                        .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
             }
         });
     }
