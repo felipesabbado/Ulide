@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -126,7 +128,8 @@ public class SpotsFromRouteFragment extends Fragment
     }
 
     public void InitalizeAdapter() {
-        ArrayAdapter<String> adapterSpots = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, spotsName);
+        ArrayAdapter<String> adapterSpots = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_list_item_1, spotsName);
         listViewSpots.setAdapter(adapterSpots);
         createListViewClickItemEvent(listViewSpots, spotsName);
     }
@@ -172,6 +175,9 @@ public class SpotsFromRouteFragment extends Fragment
                 }
                 markers.get(i)
                         .setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_nav_spots_from_route_to_nav_spot);
             }
         });
     }

@@ -39,8 +39,16 @@
     <fragment
         android:id="@+id/nav_spots_from_route"
         android:name="com.example.ulide.ui.spotsFromRoute.SpotsFromRouteFragment"
-        android:label="@string/menu_spots"
-        tools:layout="@layout/fragment_spots_from_route" />
+        tools:layout="@layout/fragment_spots_from_route" >
+        <action
+            android:id="@+id/action_nav_spots_from_route_to_nav_spot"
+            app:destination="@id/nav_spot" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_spot"
+        android:name="com.example.ulide.ui.spot.SpotFragment"
+        tools:layout="@layout/fragment_spot"/>
 
 
 </navigation>
