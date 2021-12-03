@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="0dp"
@@ -21,44 +21,16 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:context=".ui.home.MapsHomeFragment" />
 
-        <androidx.gridlayout.widget.GridLayout
+        <TextView
+            android:id="@+id/tvSpotName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/map"
-            tools:layout_editor_absoluteX="0dp">
-
-            <TextView
-                android:id="@+id/tvSpotName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name: "
-                app:layout_column="0"
-                app:layout_row="0" />
-
-            <TextView
-                android:id="@+id/tvSpotRate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rate: "
-                app:layout_column="1"
-                app:layout_row="0" />
-
-            <TextView
-                android:id="@+id/tvSpotBio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bio: "
-                app:layout_column="0"
-                app:layout_row="1" />
-
-            <TextView
-                android:id="@+id/tvSpotTags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tags: "
-                app:layout_column="1"
-                app:layout_row="1" />
-        </androidx.gridlayout.widget.GridLayout>
+            android:gravity="center"
+            android:text="Name: "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

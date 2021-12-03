@@ -6,15 +6,14 @@
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/app_bar_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/content_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_find_routes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_maps_home.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spot.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spots_from_route.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/nav_header_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/activity_main_drawer.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/spots.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/fsabb/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/fsabb/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/fsabb/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spot.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/fsabb/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spots_from_route.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2640625" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2640625" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2640625" />
@@ -45,7 +44,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
