@@ -2,6 +2,7 @@ package com.example.ulide;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,12 +20,16 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    private TextView username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+//        username = binding.username;
 
         setSupportActionBar(binding.appBarMain.toolbar);
 

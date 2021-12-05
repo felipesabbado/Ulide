@@ -25,9 +25,15 @@ import android.widget.Toast;
 
 import com.example.ulide.MainActivity;
 import com.example.ulide.R;
+import com.example.ulide.downloaders.JSONArrayDownloader;
+import com.example.ulide.downloaders.JSONObjDownloader;
 import com.example.ulide.ui.login.LoginViewModel;
 import com.example.ulide.ui.login.LoginViewModelFactory;
 import com.example.ulide.databinding.ActivityLoginBinding;
+
+import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -123,15 +128,14 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
             }
         });
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
 

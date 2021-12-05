@@ -32,9 +32,9 @@
 
     <fragment
         android:id="@+id/nav_creat_spots"
-        android:name="com.example.ulide.ui.list.RoutesFragment"
+        android:name="com.example.ulide.ui.createSpots.CreateSpotsFragment"
         android:label="@string/menu_createSpots"
-        tools:layout="@layout/fragment_routes_list" />
+        tools:layout="@layout/fragment_create_spots" />
 
     <fragment
         android:id="@+id/nav_spots_from_route"
