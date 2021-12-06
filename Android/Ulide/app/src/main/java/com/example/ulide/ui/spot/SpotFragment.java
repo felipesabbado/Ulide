@@ -5,28 +5,36 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentSpotBinding;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.FetchPlaceRequest;
+import com.google.android.libraries.places.api.net.PlacesClient;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class SpotFragment extends Fragment implements OnMapReadyCallback {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
     private GoogleMap mMap;
     private FragmentSpotBinding binding;
+//    PlacesClient placesClient = Places.createClient(getActivity());
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
 
     public SpotFragment() {
         // Required empty public constructor
@@ -35,8 +43,7 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
     public static SpotFragment newInstance(String param1, String param2) {
         SpotFragment fragment = new SpotFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -44,11 +51,18 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
+
+    // Define a Place ID.
+    final String placeId = "Palacio de belem";
+
+    // Specify the fields to return.
+    final List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+
+    // Construct a request object, passing the place ID and fields array.
+    final FetchPlaceRequest request = FetchPlaceRequest.newInstance(placeId, placeFields);
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -62,6 +76,18 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
+
+//        placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
+//            Place place = response.getPlace();
+//            Log.i("Place", "Place found: " + place.getName());
+//        }).addOnFailureListener((exception) -> {
+//            if (exception instanceof ApiException) {
+//                final ApiException apiException = (ApiException) exception;
+//                Log.e("Place", "Place not found: " + exception.getMessage());
+//                final int statusCode = apiException.getStatusCode();
+//                // TODO: Handle error with given status code.
+//            }
+//        });
 
         return root;
     }
