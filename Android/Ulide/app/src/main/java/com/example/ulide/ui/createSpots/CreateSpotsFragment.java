@@ -1,5 +1,6 @@
 package com.example.ulide.ui.createSpots;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentCreateSpotsBinding;
 import com.example.ulide.downloaders.PostData;
 
@@ -52,10 +52,15 @@ public class CreateSpotsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 try {
-                    if (spotName.getText().toString().isEmpty() ||
-                    latitude.getText().toString().isEmpty() ||
-                    longitude.getText().toString().isEmpty() ) {
-                        Toast.makeText(getActivity(), "Favor preencher todos os campos", Toast.LENGTH_SHORT).show();
+                    if (spotName.getText().toString().isEmpty()) {
+                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();
+                        spotName.setHintTextColor(Color.RED);
+                    } else if (latitude.getText().toString().isEmpty()) {
+                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();
+                        latitude.setHintTextColor(Color.RED);
+                    } else if (longitude.getText().toString().isEmpty()){
+                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();
+                        longitude.setHintTextColor(Color.RED);
                     } else {
                         Map<String, String> postData = new HashMap<>();
                         postData.put("spName", spotName.getText().toString());
@@ -67,7 +72,7 @@ public class CreateSpotsFragment extends Fragment {
 
                         Toast.makeText(getActivity(), "Local adicionado", Toast.LENGTH_SHORT).show();
 
-                        spotName.setText(spotName.getText().toString());
+                        spotName.setText("");
                         latitude.setText("");
                         longitude.setText("");
                     }
