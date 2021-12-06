@@ -53,6 +53,18 @@
                 android:textColorHint="#484646"
                 android:textSize="14sp" />
 
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:fontFamily="@font/montserrat"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
             <EditText
                 android:id="@+id/editTextBDate"
                 android:layout_width="match_parent"

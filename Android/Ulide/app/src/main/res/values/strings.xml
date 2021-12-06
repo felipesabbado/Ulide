@@ -124,10 +124,9 @@
 
 
     <string-array name="gender">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-        <item>Four</item>
-        <item>Five</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>None Binary</item>
+        <item>I abstain</item>
     </string-array>
 </resources>

@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
 //        username = binding.username;
 
+        username = findViewById(R.id.username);
+
         setSupportActionBar(binding.appBarMain.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        username.setText("guessed");
         return true;
     }
 
