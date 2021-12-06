@@ -30,6 +30,7 @@ import com.example.ulide.downloaders.JSONObjDownloader;
 import com.example.ulide.ui.login.LoginViewModel;
 import com.example.ulide.ui.login.LoginViewModelFactory;
 import com.example.ulide.databinding.ActivityLoginBinding;
+import com.example.ulide.ui.signUp.SignUpActivity;
 
 import org.json.JSONObject;
 
@@ -138,8 +139,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
+                loadingProgressBar.setVisibility(View.VISIBLE);
             }
         });
     }

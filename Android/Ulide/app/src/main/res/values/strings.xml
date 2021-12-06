@@ -115,4 +115,19 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="create_spots_location">Location</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="enter_name">Enter First and Last Name</string>
+    <string name="enter_bdate">Enter your birth date</string>
+    <string name="enter_your_gender">Enter your gender</string>
+    <string name="enter_your_password">Enter your password</string>
+
+
+    <string-array name="gender">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
 </resources>

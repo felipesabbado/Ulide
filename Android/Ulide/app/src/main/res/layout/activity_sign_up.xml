@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.signUp.SignUpActivity"
+    android:background="@drawable/sign_up_color">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
+        app:cardBackgroundColor="#FFFCFC"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="16dp"
+        app:cardMaxElevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewCreateAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Create new Account"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646" />
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/enter_name"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextBDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/enter_bdate"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/enter_your_gender"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:fontFamily="@font/montserrat"
+                android:hint="Username"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:fontFamily="@font/montserrat"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edt_back"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/enter_your_password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:checked="true"
+                android:textColor="#211E1E"
+                android:textColorHint="#484646"
+                android:text="I agree to Terms and Condition" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/btn_background"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Continue"
+                android:textColor="#fff" />
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
