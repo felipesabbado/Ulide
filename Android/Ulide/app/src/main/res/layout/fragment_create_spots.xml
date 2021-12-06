@@ -6,76 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".ui.createSpots.CreateSpotsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="185dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Submit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewSpotName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Spot Name"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="36dp" />
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="20sp"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="275dp"
-            android:layout_height="42dp"
+            android:id="@+id/editTextPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35sp"
+            android:layout_marginTop="10sp"
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="78dp" />
+            android:minHeight="48dp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_spots_location"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="154dp" />
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="20sp"/>
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
-            android:layout_width="99dp"
-            android:layout_height="39dp"
+            android:id="@+id/editTextLatitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35sp"
+            android:layout_marginTop="10sp"
             android:ems="10"
             android:hint="Latitude"
             android:inputType="numberDecimal"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="196dp" />
+            android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal3"
-            android:layout_width="99dp"
-            android:layout_height="39dp"
+            android:id="@+id/editTextLongitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35sp"
+            android:layout_marginTop="10sp"
             android:ems="10"
             android:hint="Longitude"
             android:inputType="numberDecimal"
-            tools:layout_editor_absoluteX="231dp"
-            tools:layout_editor_absoluteY="196dp" />
+            android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="276dp"
-            android:layout_height="40dp"
+            android:id="@+id/buttonMyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Use my location"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="235dp" />
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
 
 </FrameLayout>

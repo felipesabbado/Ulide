@@ -148,7 +148,7 @@
                 android:text="I agree to Terms and Condition" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
