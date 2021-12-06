@@ -7,60 +7,77 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.ulide.R;
+import com.example.ulide.databinding.FragmentCreateSpotsBinding;
+import com.example.ulide.downloaders.PostData;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CreateSpotsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONArray;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class CreateSpotsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private FragmentCreateSpotsBinding binding;
+    private JSONArray spot = null;
+    private EditText spotName, latitude, longitude;
+    private Button submit;
 
     public CreateSpotsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CreateSpotsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CreateSpotsFragment newInstance(String param1, String param2) {
-        CreateSpotsFragment fragment = new CreateSpotsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_spots, container, false);
+        binding = FragmentCreateSpotsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        spotName = binding.editTextPersonName;
+        latitude = binding.editTextLatitude;
+        longitude = binding.editTextLongitude;
+        submit = binding.buttonSubmit;
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    if (spotName.getText().toString().isEmpty() ||
+                    latitude.getText().toString().isEmpty() ||
+                    longitude.getText().toString().isEmpty() ) {
+                        Toast.makeText(getActivity(), "Favor preencher todos os campos", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Map<String, String> postData = new HashMap<>();
+                        postData.put("spName", spotName.getText().toString());
+                        postData.put("spLat", latitude.getText().toString());
+                        postData.put("spLong", longitude.getText().toString());
+
+                        PostData task = new PostData(postData);
+                        task.execute("https://ulide.herokuapp.com/api/spots");
+
+                        Toast.makeText(getActivity(), "Local adicionado", Toast.LENGTH_SHORT).show();
+
+                        spotName.setText(spotName.getText().toString());
+                        latitude.setText("");
+                        longitude.setText("");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    spot = null;
+                }
+            }
+        });
+
+        return root;
     }
 }
