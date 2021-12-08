@@ -129,4 +129,7 @@
         <item>None Binary</item>
         <item>I abstain</item>
     </string-array>
+    <string name="title_activity_my_profile_tab">MyProfileTab</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
