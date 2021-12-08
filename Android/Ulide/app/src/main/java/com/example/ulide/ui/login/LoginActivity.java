@@ -57,6 +57,9 @@ public class LoginActivity extends AppCompatActivity {
         final ProgressBar loadingProgressBar = binding.loading;
         final TextView signUp = binding.textViewSingUp;
 
+        usernameEditText.setText("Leonerdo15");
+        passwordEditText.setText("123456");
+
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {

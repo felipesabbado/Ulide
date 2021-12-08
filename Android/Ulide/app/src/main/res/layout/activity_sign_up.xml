@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="34dp"
         app:cardBackgroundColor="#FFFCFC"
         app:cardCornerRadius="8dp"
         app:cardElevation="16dp"
@@ -71,26 +71,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@drawable/edt_back"
+                android:editable="false"
                 android:fontFamily="@font/montserrat"
                 android:hint="@string/enter_bdate"
+                android:inputType="none"
                 android:padding="8dp"
                 android:textColor="#211E1E"
                 android:textColorHint="#484646"
                 android:textSize="14sp" />
 
-            <EditText
-                android:id="@+id/editTextGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@drawable/edt_back"
-                android:fontFamily="@font/montserrat"
-                android:hint="@string/enter_your_gender"
-                android:inputType="number"
-                android:padding="8dp"
-                android:textColor="#211E1E"
-                android:textColorHint="#484646"
-                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/editTextUserName"
@@ -148,7 +137,7 @@
                 android:text="I agree to Terms and Condition" />
 
             <Button
-                android:id="@+id/buttonSubmit"
+                android:id="@+id/buttonSubmitSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

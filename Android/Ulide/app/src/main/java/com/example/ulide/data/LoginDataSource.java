@@ -11,14 +11,16 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-/**
- * Class that handles authentication w/ login credentials and retrieves user information.
- */
+
 public class LoginDataSource {
 
     private String id;
-    private String usernameJson;
     private JSONObject objLogin;
+    public static int ID = 1;
+
+    public LoginDataSource(){
+    }
+
 
     public Result<LoggedInUser> login(String username, String password) {
 
@@ -53,8 +55,12 @@ public class LoginDataSource {
         Log.e("Login", ""+objLogin);
 
         try {
-            id = objLogin.getString("usUsername");
-            usernameJson = objLogin.getString("usPassword");
+            id = objLogin.getString("id");
+            Log.e("id", id);
+
+            ID = Integer.parseInt(id);
+            Log.e("testeeeeeeeeeeeeeeeeeeeeee", ""+ID);
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
