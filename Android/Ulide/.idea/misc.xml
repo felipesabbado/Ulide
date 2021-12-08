@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/app_bar_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/content_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_create_spots.xml" value="0.25" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_find_routes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile.xml" value="0.25" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile_tab.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spots_from_route.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/nav_header_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/activity_main_drawer.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/main.xml" value="0.22447916666666667" />
@@ -30,9 +36,9 @@
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout-w936dp/activity_login.xml" value="0.2671875" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout-w936dp/spots.xml" value="0.2671875" />
-        <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/activity_main.xml" value="0.34623217922606925" />
-        <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/activity_sign_up.xml" value="0.29260450160771706" />
+        <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/activity_sign_up.xml" value="0.3123359580052493" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/app_bar_main.xml" value="0.24375" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/content_main.xml" value="0.23505434782608695" />
         <entry key="..\:/Users/leona/Documents/aula/2 ano/1 semestre/UlideGit/Android/Ulide/app/src/main/res/layout/custom_styles.xml" value="0.35625" />
