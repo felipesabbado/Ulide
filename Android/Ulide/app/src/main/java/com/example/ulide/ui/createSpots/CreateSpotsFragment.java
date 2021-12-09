@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -144,7 +145,11 @@ public class CreateSpotsFragment extends Fragment {
                         postData.put("spLong", longitude.getText().toString());
 
                         PostData task = new PostData(postData);
-                        task.execute("https://ulide.herokuapp.com/api/spots");
+                        JSONArray test;
+                        test = task.execute("https://ulide.herokuapp.com/api/spots").get();
+
+                        Log.e("quarquer coisa vbsdkjfnsdjn ilwehd clkusfh clkusdhcv lku klv hklrwj",""+test.toString());
+
 
                         Toast.makeText(getActivity(), "Local adicionado", Toast.LENGTH_SHORT).show();
 

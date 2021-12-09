@@ -18,9 +18,6 @@ public class LoginDataSource {
     private JSONObject objLogin;
     public static int ID = 1;
 
-    public LoginDataSource(){
-    }
-
 
     public Result<LoggedInUser> login(String username, String password) {
 
@@ -60,6 +57,7 @@ public class LoginDataSource {
 
             ID = Integer.parseInt(id);
             Log.e("testeeeeeeeeeeeeeeeeeeeeee", ""+ID);
+            Log.e("ID do loginDataSource", ""+ID);
 
         } catch (JSONException e) {
             e.printStackTrace();
