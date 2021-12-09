@@ -22,6 +22,7 @@ import com.example.ulide.ui.myProfile.tabs.TabRoutes;
 import com.example.ulide.ui.myProfile.tabs.TabSpots;
 import com.google.android.material.tabs.TabLayout;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
@@ -50,16 +51,22 @@ public class MyProfileFragment extends Fragment {
 
         // Buscar as infos do user na BD
         JSONObjDownloader task = new JSONObjDownloader();
+        String url = "https://ulide.herokuapp.com/api/users/"+id;
         try {
-            jsonUser = task.execute("https://ulide.herokuapp.com/api/user/" + id).get();
+            jsonUser = task.execute(url).get();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
             jsonUser = null;
         }
 
         if(jsonUser != null) {
-
-            Log.e("USER_JSON", jsonUser.toString());
+            try {
+                profileName.setText(jsonUser.getString("usName"));
+                profileEmail.setText(jsonUser.getString("usEmail"));
+                profileBio.setText(jsonUser.getString("usBio"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else {
             Log.e("USER_JSON", "NULL");
         }

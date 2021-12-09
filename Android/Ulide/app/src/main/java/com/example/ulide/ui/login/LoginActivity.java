@@ -25,16 +25,8 @@ import android.widget.Toast;
 
 import com.example.ulide.MainActivity;
 import com.example.ulide.R;
-import com.example.ulide.downloaders.JSONArrayDownloader;
-import com.example.ulide.downloaders.JSONObjDownloader;
-import com.example.ulide.ui.login.LoginViewModel;
-import com.example.ulide.ui.login.LoginViewModelFactory;
 import com.example.ulide.databinding.ActivityLoginBinding;
 import com.example.ulide.ui.signUp.SignUpActivity;
-
-import org.json.JSONObject;
-
-import java.util.concurrent.ExecutionException;
 
 public class LoginActivity extends AppCompatActivity {
 
