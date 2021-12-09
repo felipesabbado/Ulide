@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class JSONObjDownloader extends AsyncTask<String, Void, JSONObject> {
+
     @Override
     protected JSONObject doInBackground(String... urls) {
         String result = "";

@@ -87,7 +87,7 @@ public class CreateSpotsFragment extends Fragment {
         } else {
             locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
-                    5000,
+                    0,
                     0,
                     locationListener
             );
@@ -147,9 +147,6 @@ public class CreateSpotsFragment extends Fragment {
                         PostData task = new PostData(postData);
                         JSONArray test;
                         test = task.execute("https://ulide.herokuapp.com/api/spots").get();
-
-                        Log.e("quarquer coisa vbsdkjfnsdjn ilwehd clkusfh clkusdhcv lku klv hklrwj",""+test.toString());
-
 
                         Toast.makeText(getActivity(), "Local adicionado", Toast.LENGTH_SHORT).show();
 
