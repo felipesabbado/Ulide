@@ -27,6 +27,7 @@ import com.example.ulide.MainActivity;
 import com.example.ulide.R;
 import com.example.ulide.databinding.ActivityLoginBinding;
 import com.example.ulide.ui.signUp.SignUpActivity;
+import com.example.ulide.ui.spotsFromRoute.RecyclerViewOnMapActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -147,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, RecyclerViewOnMapActivity.class);
         startActivity(intent);
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }

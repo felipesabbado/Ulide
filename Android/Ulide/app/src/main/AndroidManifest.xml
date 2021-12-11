@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ulide">
         <activity
+            android:name=".ui.mapbox.StartRouteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.spotsFromRoute.RecyclerViewOnMapActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.signUp.SignUpActivity"
             android:exported="true" />
         <!--
