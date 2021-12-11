@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:textColor="@color/mapboxPurpleDark10"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/location_num_of_beds_tv"
