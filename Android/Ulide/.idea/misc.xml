@@ -13,7 +13,13 @@
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile_tab.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spots_from_route.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes_done.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes_eval.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes_fav.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots_done.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots_eval.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots_fav.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/nav_header_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/activity_main_drawer.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/main.xml" value="0.22447916666666667" />
@@ -76,7 +82,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
