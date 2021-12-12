@@ -38,6 +38,8 @@ public class FindRoutesFragment extends Fragment {
     public ArrayAdapter<String> adapterRoutes;
     public JSONArray objRoutesAvg;
 
+    public static String ID_ROUTE;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -93,13 +95,14 @@ public class FindRoutesFragment extends Fragment {
                 Log.e("INFO", id.get(i));
                 //https://developer.android.com/guide/fragments/communicate
                 Bundle result = new Bundle();
+                ID_ROUTE = id.get(i);
                 result.putString("id", id.get(i));
                 result.putString("name", name.get(i));
                 getParentFragmentManager().setFragmentResult("route", result);
 
                 //https://www.codegrepper.com/code-examples/java/intent+to+move+from+one+fragment+to+another+fragment+in+android
                 Navigation.findNavController(view)
-                        .navigate(R.id.action_nav_find_routes_to_nav_spots_from_route);
+                        .navigate(R.id.action_nav_find_routes_to_nav_recycle_view_spots_from_routes);
             }
         });
     }

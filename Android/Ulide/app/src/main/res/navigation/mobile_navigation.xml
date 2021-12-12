@@ -27,6 +27,9 @@
             app:enterAnim="@android:anim/slide_in_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_nav_find_routes_to_nav_recycle_view_spots_from_routes"
+            app:destination="@id/nav_recycle_view_spots_from_routes" />
 
     </fragment>
 
@@ -35,6 +38,19 @@
         android:name="com.example.ulide.ui.createSpots.CreateSpotsFragment"
         android:label="@string/menu_createSpots"
         tools:layout="@layout/fragment_create_spots" />
+
+    <fragment
+        android:id="@+id/nav_recycle_view_spots_from_routes"
+        android:name="com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment"
+        android:label="@string/menu_createSpots"
+        tools:layout="@layout/fragment_recycle_view_spots_from_routes" >
+        <argument
+            android:name="idRoute"
+            app:argType="string" />
+        <argument
+            android:name="nameRoute"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_spots_from_route"
