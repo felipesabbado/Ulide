@@ -26,7 +26,7 @@ public class TabRoutes extends Fragment {
         binding = FragmentTabRoutesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         tabLayout = binding.tabRoutes;
-        viewPager = binding.viewerPageRoutes;
+        viewPager = binding.viewerPagerRoutes;
 
         tabLayout.setupWithViewPager(viewPager);
 

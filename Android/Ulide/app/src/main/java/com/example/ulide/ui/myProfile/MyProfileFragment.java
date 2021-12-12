@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.ulide.R;
 import com.example.ulide.data.LoginDataSource;
 import com.example.ulide.databinding.FragmentMyProfileBinding;
 import com.example.ulide.downloaders.JSONObjDownloader;

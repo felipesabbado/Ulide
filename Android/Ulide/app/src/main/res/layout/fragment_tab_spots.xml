@@ -28,7 +28,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewerPageSpots"
+        android:id="@+id/viewerPagerSpots"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

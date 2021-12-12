@@ -25,7 +25,7 @@ public class TabSpots extends Fragment {
         binding = FragmentTabSpotsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         tabLayout = binding.tabSpots;
-        viewPager = binding.viewerPageSpots;
+        viewPager = binding.viewerPagerSpots;
 
         tabLayout.setupWithViewPager(viewPager);
 
