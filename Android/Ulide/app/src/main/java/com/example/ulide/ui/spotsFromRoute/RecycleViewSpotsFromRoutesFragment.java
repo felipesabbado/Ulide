@@ -20,6 +20,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -161,6 +162,7 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
 
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mMap.setBuildingsEnabled(false);
 
         initFeatureCollection(googleMap);
         initRecyclerView();
@@ -274,10 +276,17 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
                 public void onClick(View view, int position) {
                     LatLng selectedLocationLatLng = locationList.get(position).getLocationCoordinates();
 
-                    LatLng latLng = new LatLng(Double.parseDouble(String.valueOf(locationList.get(position).getLocationCoordinates().latitude)) , Double.parseDouble(String.valueOf(locationList.get(position).getLocationCoordinates().latitude)) );
+                    LatLng latLng = new LatLng(locationList.get(position).getLocationCoordinates().latitude , locationList.get(position).getLocationCoordinates().longitude );
 
-                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 11));
 
+                    map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    CameraPosition cameraPosition = new CameraPosition.Builder()
+                            .target(latLng )      // Sets the center of the map to Mountain View
+                            .zoom(18)                   // Sets the zoom
+                            .bearing(90)                // Sets the orientation of the camera to east
+                            .tilt(30)                   // Sets the tilt of the camera to 30 degrees
+                            .build();
+                    map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 }
             });
         }
