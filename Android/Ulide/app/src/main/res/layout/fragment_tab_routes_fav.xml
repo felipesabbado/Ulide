@@ -5,12 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.myProfile.tabs.TabRoutesFav">
 
-    <TextView
+    <ListView
+        android:id="@+id/listViewRoutesFav"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TAB ROUTES FAVORITES"
-        android:textSize="24dp"
-        android:gravity="center"
-        android:background="@color/quantum_yellow"/>
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

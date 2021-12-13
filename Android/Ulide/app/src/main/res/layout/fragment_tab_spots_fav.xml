@@ -5,12 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.myProfile.tabs.TabSpotsFav">
 
-    <TextView
+    <ListView
+        android:id="@+id/listViewSpotsFav"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TAB SPOTS FAVORITES"
-        android:textSize="24dp"
-        android:gravity="center"
-        android:background="@color/quantum_lightgreen"/>
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>
