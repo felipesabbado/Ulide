@@ -11,6 +11,8 @@
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_find_routes.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile.xml" value="0.25" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile_tab.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_routes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spot.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spots_from_route.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_routes_done.xml" value="0.22447916666666667" />
@@ -20,7 +22,11 @@
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots_done.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots_eval.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_tab_spots_fav.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/list_group.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/list_item.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/nav_header_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/profile_tab_routes_child.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/profile_tab_routes_header.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/activity_main_drawer.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/menu/spots.xml" value="0.22447916666666667" />

@@ -71,8 +71,6 @@ public class MyProfileFragment extends Fragment {
         }
 
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.addTab(tabLayout.newTab().setText("Routes"));
-        tabLayout.addTab(tabLayout.newTab().setText("Spots"));
         MyAdapter adapter = new MyAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         adapter.addFragment(new TabRoutes(), "Routes");
         adapter.addFragment(new TabSpots(), "Spots");

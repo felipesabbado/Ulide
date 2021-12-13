@@ -6,29 +6,8 @@
     android:orientation="vertical"
     tools:context=".ui.myProfile.tabs.TabRoutes">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabRoutes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Favorites"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Evalutations"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Done"/>
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewerPagerRoutes"
+    <ExpandableListView
+        android:id="@+id/profileRoutesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

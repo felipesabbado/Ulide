@@ -647,6 +647,8 @@
 
     <!-- Extrusion color expression highlight -->
     <string name="tap_on_building_to_highlight">Tap on a building to highlight it</string>
+    <string name="routes">Routes</string>
+    <string name="spots">Spots</string>
 
 </resources>
 
