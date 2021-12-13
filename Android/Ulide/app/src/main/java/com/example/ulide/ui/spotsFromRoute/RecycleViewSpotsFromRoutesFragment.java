@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +37,7 @@ import java.util.List;
 
 import androidx.cardview.widget.CardView;
 
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
@@ -71,6 +74,7 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
     private ArrayList<Marker> markers;
     private JSONArray spotsArray;
     private GoogleMap mMap;
+
 
 
 
@@ -253,6 +257,7 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
 
         private List<RecycleViewSpotsFromRoutesFragment.SingleRecyclerViewLocation> locationList;
         private GoogleMap map;
+        long mLastClickTime = 0;
 
         public LocationRecyclerViewAdapter(List<RecycleViewSpotsFromRoutesFragment.SingleRecyclerViewLocation> locationList, GoogleMap map) {
             this.locationList = locationList;
@@ -276,17 +281,26 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
                 public void onClick(View view, int position) {
                     LatLng selectedLocationLatLng = locationList.get(position).getLocationCoordinates();
 
-                    LatLng latLng = new LatLng(locationList.get(position).getLocationCoordinates().latitude , locationList.get(position).getLocationCoordinates().longitude );
+
+                    if (SystemClock.elapsedRealtime() - mLastClickTime < 250){
+                        Navigation.findNavController(view).navigate(R.id.action_nav_recycle_view_spots_from_routes_to_nav_spot);
+                        Log.e("Time", ""+mLastClickTime);
+                    } else {
+
+                        LatLng latLng = new LatLng(locationList.get(position).getLocationCoordinates().latitude , locationList.get(position).getLocationCoordinates().longitude );
 
 
-                    map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                    CameraPosition cameraPosition = new CameraPosition.Builder()
-                            .target(latLng )      // Sets the center of the map to Mountain View
-                            .zoom(18)                   // Sets the zoom
-                            .bearing(90)                // Sets the orientation of the camera to east
-                            .tilt(30)                   // Sets the tilt of the camera to 30 degrees
-                            .build();
-                    map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                        map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                        CameraPosition cameraPosition = new CameraPosition.Builder()
+                                .target(latLng )      // Sets the center of the map to Mountain View
+                                .zoom(18)                   // Sets the zoom
+                                .bearing(90)                // Sets the orientation of the camera to east
+                                .tilt(30)                   // Sets the tilt of the camera to 30 degrees
+                                .build();
+                        map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                        Log.e("Time", ""+mLastClickTime);
+                    }
+                    mLastClickTime = SystemClock.elapsedRealtime();
                 }
             });
         }

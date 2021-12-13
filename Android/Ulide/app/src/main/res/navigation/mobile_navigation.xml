@@ -50,6 +50,9 @@
         <argument
             android:name="nameRoute"
             app:argType="string" />
+        <action
+            android:id="@+id/action_nav_recycle_view_spots_from_routes_to_nav_spot"
+            app:destination="@id/nav_spot" />
     </fragment>
 
     <fragment
