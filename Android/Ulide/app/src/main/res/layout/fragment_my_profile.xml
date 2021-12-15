@@ -84,7 +84,6 @@
         android:layout_height="wrap_content"
         app:tabBackground="@color/teal_700"
         app:tabIndicatorColor="@color/white"
-        app:tabTextAppearance="?android:attr/textAppearanceButton"
         app:tabSelectedTextColor="@color/teal_200"
         app:tabTextColor="@color/white">
 
