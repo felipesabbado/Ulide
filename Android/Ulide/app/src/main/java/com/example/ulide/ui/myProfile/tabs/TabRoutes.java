@@ -37,6 +37,7 @@ public class TabRoutes extends Fragment {
     private ArrayList<String> routesComment;
     private ArrayList<String> routesEvalId;
     private ArrayList<String> routesEvalName;
+    private ArrayList<String> routesDoneName;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -48,12 +49,13 @@ public class TabRoutes extends Fragment {
         String urlFav = "https://ulide.herokuapp.com/api/routes/fav/user/" + id;
         String urlEval = "https://ulide.herokuapp.com/api/routesEvaluations/user/" + id;
         String urlRoutes = "https://ulide.herokuapp.com/api/routes/";
-        // String urlDone = "https://ulide.herokuapp.com/api/routes/fav/user/";
+        String urlDone = "https://ulide.herokuapp.com/api/routes/done/user/" + id;
 
         favRoutesName = getJsonArray(urlFav, "rtName");
         routesRate = getJsonArray(urlEval, "reRate");
         routesComment = getJsonArray(urlEval, "reComment");
         routesEvalId = getJsonArray(urlEval, "reRtId");
+        routesDoneName = getJsonArray(urlDone, "rtName");
 
         routesEvalName = new ArrayList<>();
         for (int i = 0; i < routesEvalId.size(); i++){
@@ -93,7 +95,7 @@ public class TabRoutes extends Fragment {
         listItem.put(listGroup.get(0), favRoutesName);
         listItem.put(listGroup.get(1), list1);
         listItem.put(listGroup.get(2), list2);
-        listItem.put(listGroup.get(3), routesEvalId);
+        listItem.put(listGroup.get(3), routesDoneName);
         adapter.notifyDataSetChanged();
     }
 

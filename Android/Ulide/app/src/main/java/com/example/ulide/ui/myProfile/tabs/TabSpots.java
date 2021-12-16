@@ -41,6 +41,7 @@ public class TabSpots extends Fragment {
     private ArrayList<String> spotsComment;
     private ArrayList<String> spotsEvalId;
     private ArrayList<String> spotsEvalName;
+    private ArrayList<String> spotsDoneName;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -56,11 +57,13 @@ public class TabSpots extends Fragment {
         String urlFav = "https://ulide.herokuapp.com/api/spots/fav/user/" + id;
         String urlEval = "https://ulide.herokuapp.com/api/spotsEvaluations/user/" + id;
         String urlRoutes = "https://ulide.herokuapp.com/api/spots/";
+        String urlDone = "https://ulide.herokuapp.com/api/spots/done/user/" + id;
 
         favSpotsName = getJsonArray(urlFav, "spName");
         spotsRate = getJsonArray(urlEval, "seRate");
         spotsComment = getJsonArray(urlEval, "seComment");
         spotsEvalId = getJsonArray(urlEval, "seSpId");
+        spotsDoneName = getJsonArray(urlDone, "spName");
 
         spotsEvalName = new ArrayList<>();
         for (int i = 0; i < spotsEvalId.size(); i++){
@@ -95,7 +98,7 @@ public class TabSpots extends Fragment {
         listItem.put(listGroup.get(0), favSpotsName);
         listItem.put(listGroup.get(1), list1);
         listItem.put(listGroup.get(2), list2);
-        listItem.put(listGroup.get(3), spotsEvalId);
+        listItem.put(listGroup.get(3), spotsDoneName);
         adapter.notifyDataSetChanged();
     }
 
