@@ -95,7 +95,8 @@ public class CreateSpotsFragment extends Fragment {
 
     // 4 - Verificar se temos permissões ao executar a nossa Activity
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -129,13 +130,20 @@ public class CreateSpotsFragment extends Fragment {
             public void onClick(View view) {
                 try {
                     if (spotName.getText().toString().isEmpty()) {
-                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho",
+                                Toast.LENGTH_SHORT).show();
                         spotName.setHintTextColor(Color.RED);
-                    } else if (latitude.getText().toString().isEmpty()) {
-                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (latitude.getText().toString().isEmpty()) {
+                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho",
+                                Toast.LENGTH_SHORT).show();
                         latitude.setHintTextColor(Color.RED);
-                    } else if (longitude.getText().toString().isEmpty()){
-                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (longitude.getText().toString().isEmpty()){
+                        Toast.makeText(getActivity(), "Favor preencher o campo em vermelho",
+                                Toast.LENGTH_SHORT).show();
                         longitude.setHintTextColor(Color.RED);
                     } else {
                         Map<String, String> postData = new HashMap<>();
@@ -147,7 +155,8 @@ public class CreateSpotsFragment extends Fragment {
                         JSONArray test;
                         test = task.execute("https://ulide.herokuapp.com/api/spots").get();
 
-                        Toast.makeText(getActivity(), "Local adicionado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Local adicionado",
+                                Toast.LENGTH_SHORT).show();
 
                         spotName.setText("");
                         latitude.setText("");
@@ -169,5 +178,11 @@ public class CreateSpotsFragment extends Fragment {
         });
 
         return root;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        locationManager.removeUpdates(locationListener);
     }
 }
