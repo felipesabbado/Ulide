@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ulide.MainActivity;
 import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentRecycleViewSpotsFromRoutesBinding;
 
@@ -47,8 +49,7 @@ import androidx.recyclerview.widget.SnapHelper;
 import android.widget.TextView;
 
 
-
-
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 
@@ -80,15 +81,18 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
 
 
 
+    @SuppressLint("RestrictedApi")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getJSON(FindRoutesFragment.ID_ROUTE,"name");
+        Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).setTitle(FindRoutesFragment.NAME_ROUTE);
+        Objects.requireNonNull(((MainActivity) requireActivity()).getSupportActionBar()).collapseActionView();
+        getJSON(FindRoutesFragment.ID_ROUTE);
 
     }
 
-    public void getJSON(String id, String name){
+    public void getJSON(String id){
         JSONArrayDownloader task = new JSONArrayDownloader();
         String url = "https://ulide.herokuapp.com/api/routes/" + id + "/spots";
         try {

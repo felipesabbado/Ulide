@@ -45,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
@@ -101,6 +102,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
 
+                    signUp.setTextColor(Color.BLUE);
 
                     if (name.getText().toString().isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Favor preencher o campo em vermelho", Toast.LENGTH_SHORT).show();

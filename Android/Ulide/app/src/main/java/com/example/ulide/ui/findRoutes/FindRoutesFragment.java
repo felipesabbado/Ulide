@@ -39,6 +39,7 @@ public class FindRoutesFragment extends Fragment {
     public JSONArray objRoutesAvg;
 
     public static String ID_ROUTE;
+    public static String NAME_ROUTE;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -96,6 +97,8 @@ public class FindRoutesFragment extends Fragment {
                 //https://developer.android.com/guide/fragments/communicate
                 Bundle result = new Bundle();
                 ID_ROUTE = id.get(i);
+                NAME_ROUTE = name.get(i);
+
                 result.putString("id", id.get(i));
                 result.putString("name", name.get(i));
                 getParentFragmentManager().setFragmentResult("route", result);

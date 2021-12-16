@@ -1,5 +1,6 @@
 package com.example.ulide.ui.myProfile;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -78,4 +80,17 @@ public class MyProfileFragment extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        tabLayout.setupWithViewPager(viewPager);
+        MyAdapter adapter = new MyAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        adapter.addFragment(new TabRoutes(), "Routes");
+        adapter.addFragment(new TabSpots(), "Spots");
+        viewPager.setAdapter(adapter);
+
+    }
+
 }

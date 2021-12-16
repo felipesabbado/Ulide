@@ -29,7 +29,9 @@
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_nav_find_routes_to_nav_recycle_view_spots_from_routes"
-            app:destination="@id/nav_recycle_view_spots_from_routes" />
+            app:destination="@id/nav_recycle_view_spots_from_routes"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_right" />
 
     </fragment>
 
@@ -42,7 +44,7 @@
     <fragment
         android:id="@+id/nav_recycle_view_spots_from_routes"
         android:name="com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment"
-        android:label="@string/menu_createSpots"
+        android:label="@string/menu_spots"
         tools:layout="@layout/fragment_recycle_view_spots_from_routes" >
         <argument
             android:name="idRoute"
@@ -52,7 +54,9 @@
             app:argType="string" />
         <action
             android:id="@+id/action_nav_recycle_view_spots_from_routes_to_nav_spot"
-            app:destination="@id/nav_spot" />
+            app:destination="@id/nav_spot"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_right" />
     </fragment>
 
     <fragment
@@ -67,6 +71,7 @@
     <fragment
         android:id="@+id/nav_spot"
         android:name="com.example.ulide.ui.spot.SpotFragment"
+        android:label="@string/menu_spots"
         tools:layout="@layout/fragment_spot"/>
 
 
