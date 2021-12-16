@@ -35,7 +35,6 @@ public class TabRoutes extends Fragment {
     private ArrayList<String> favRoutesName;
     private ArrayList<String> routesRate;
     private ArrayList<String> routesComment;
-    private ArrayList<String> routesEvalId;
     private ArrayList<String> routesEvalName;
     private ArrayList<String> routesDoneName;
 
@@ -48,21 +47,15 @@ public class TabRoutes extends Fragment {
         String id = String.valueOf(LoginDataSource.ID);
         String urlFav = "https://ulide.herokuapp.com/api/routes/fav/user/" + id;
         String urlEval = "https://ulide.herokuapp.com/api/routesEvaluations/user/" + id;
-        String urlRoutes = "https://ulide.herokuapp.com/api/routes/";
+        String urlEvalRoutes = "https://ulide.herokuapp.com/api/routes/eval/user/" + id;
         String urlDone = "https://ulide.herokuapp.com/api/routes/done/user/" + id;
 
         favRoutesName = getJsonArray(urlFav, "rtName");
-        routesRate = getJsonArray(urlEval, "reRate");
-        routesComment = getJsonArray(urlEval, "reComment");
-        routesEvalId = getJsonArray(urlEval, "reRtId");
+        routesRate = new ArrayList<>();
+        routesComment = new ArrayList<>();
+        getEvalArray(urlEval);
+        routesEvalName = getJsonArray(urlEvalRoutes, "rtName");
         routesDoneName = getJsonArray(urlDone, "rtName");
-
-        routesEvalName = new ArrayList<>();
-        for (int i = 0; i < routesEvalId.size(); i++){
-            String name = getJsonObj(urlRoutes + routesEvalId.get(i), "rtName");
-            routesEvalName.add(name);
-        }
-        // getJsonArray(urlDone);
 
         // Expandable List View
         expandableListView = binding.profileRoutesList;
@@ -83,12 +76,12 @@ public class TabRoutes extends Fragment {
         listGroup.add("Done");
 
         ArrayList<String> list1 = new ArrayList<>();
-        for (int i = 0; i < routesRate.size(); i++){
+        for (int i = 0; i < routesEvalName.size(); i++){
             list1.add(routesEvalName.get(i) + " - Rate: " + routesRate.get(i));
         }
 
         ArrayList<String> list2 = new ArrayList<>();
-        for (int i = 0; i < routesRate.size(); i++){
+        for (int i = 0; i < routesEvalName.size(); i++){
             list2.add(routesEvalName.get(i) + " - Comment: " + routesComment.get(i));
         }
 
@@ -125,25 +118,27 @@ public class TabRoutes extends Fragment {
         return arrayList;
     }
 
-    public String getJsonObj(String url, String key){
-        JSONObject jsonObject;
-        JSONObjDownloader task = new JSONObjDownloader();
+    public void getEvalArray(String url){
+        JSONArray jsonArray;
+        JSONArrayDownloader task = new JSONArrayDownloader();
         try {
-            jsonObject = task.execute(url).get();
+            jsonArray = task.execute(url).get();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
-            jsonObject = null;
+            jsonArray = null;
         }
 
-        String result = "";
-        if (jsonObject != null) {
-            try {
-               result = (jsonObject.getString(key));
-            } catch (JSONException e) {
-                e.printStackTrace();
+        JSONObject obj;
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    obj = jsonArray.getJSONObject(i);
+                    routesRate.add(obj.getString("reRate"));
+                    routesComment.add(obj.getString("reComment"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }
-
-        return result;
     }
 }

@@ -39,7 +39,6 @@ public class TabSpots extends Fragment {
     private ArrayList<String> favSpotsName;
     private ArrayList<String> spotsRate;
     private ArrayList<String> spotsComment;
-    private ArrayList<String> spotsEvalId;
     private ArrayList<String> spotsEvalName;
     private ArrayList<String> spotsDoneName;
 
@@ -56,20 +55,15 @@ public class TabSpots extends Fragment {
         String id = String.valueOf(LoginDataSource.ID);
         String urlFav = "https://ulide.herokuapp.com/api/spots/fav/user/" + id;
         String urlEval = "https://ulide.herokuapp.com/api/spotsEvaluations/user/" + id;
-        String urlRoutes = "https://ulide.herokuapp.com/api/spots/";
+        String urlEvalSpots = "https://ulide.herokuapp.com/api/spots/eval/user/" + id;
         String urlDone = "https://ulide.herokuapp.com/api/spots/done/user/" + id;
 
         favSpotsName = getJsonArray(urlFav, "spName");
-        spotsRate = getJsonArray(urlEval, "seRate");
-        spotsComment = getJsonArray(urlEval, "seComment");
-        spotsEvalId = getJsonArray(urlEval, "seSpId");
+        spotsRate = new ArrayList<>();
+        spotsComment = new ArrayList<>();
+        getEvalArray(urlEval);
+        spotsEvalName = getJsonArray(urlEvalSpots, "spName");
         spotsDoneName = getJsonArray(urlDone, "spName");
-
-        spotsEvalName = new ArrayList<>();
-        for (int i = 0; i < spotsEvalId.size(); i++){
-            String name = getJsonObj(urlRoutes + spotsEvalId.get(i), "spName");
-            spotsEvalName.add(name);
-        }
 
         // Expandable List View
         adapter = new ExpListViewAdapter(getContext(), listGroup, listItem);
@@ -86,12 +80,12 @@ public class TabSpots extends Fragment {
         listGroup.add("Done");
 
         ArrayList<String> list1 = new ArrayList<>();
-        for (int i = 0; i < spotsRate.size(); i++){
+        for (int i = 0; i < spotsEvalName.size(); i++){
             list1.add(spotsEvalName.get(i) + " - Rate: " + spotsRate.get(i));
         }
 
         ArrayList<String> list2 = new ArrayList<>();
-        for (int i = 0; i < spotsRate.size(); i++){
+        for (int i = 0; i < spotsEvalName.size(); i++){
             list2.add(spotsEvalName.get(i) + " - Comment: " + spotsComment.get(i));
         }
 
@@ -100,6 +94,30 @@ public class TabSpots extends Fragment {
         listItem.put(listGroup.get(2), list2);
         listItem.put(listGroup.get(3), spotsDoneName);
         adapter.notifyDataSetChanged();
+    }
+
+    public void getEvalArray(String url){
+        JSONArray jsonArray;
+        JSONArrayDownloader task = new JSONArrayDownloader();
+        try {
+            jsonArray = task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            jsonArray = null;
+        }
+
+        JSONObject obj;
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    obj = jsonArray.getJSONObject(i);
+                    spotsRate.add(obj.getString("seRate"));
+                    spotsComment.add(obj.getString("seComment"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public ArrayList<String> getJsonArray(String url, String key){
@@ -126,27 +144,5 @@ public class TabSpots extends Fragment {
         }
 
         return arrayList;
-    }
-
-    public String getJsonObj(String url, String key){
-        JSONObject jsonObject;
-        JSONObjDownloader task = new JSONObjDownloader();
-        try {
-            jsonObject = task.execute(url).get();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-            jsonObject = null;
-        }
-
-        String result = "";
-        if (jsonObject != null) {
-            try {
-                result = (jsonObject.getString(key));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return result;
     }
 }

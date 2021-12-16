@@ -60,7 +60,6 @@ public class PostData extends AsyncTask<String, Void, JSONArray> {
                 JSONObject obj = new JSONObject(response);
                 arr = new JSONArray();
                 arr.put(obj);
-                Log.e("quarquer coisa vbsdkjfnsdjn ilwehd clkusfh clkusdhcv lku klv hklrwj",""+arr.toString());
 
             } else {
                 // Quando o código não devolve o 200
