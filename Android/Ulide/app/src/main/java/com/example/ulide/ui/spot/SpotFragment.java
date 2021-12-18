@@ -70,15 +70,13 @@ public class SpotFragment extends Fragment {
     public void downloadImage() {
         ImageDownloader task = new ImageDownloader();
         try {
-            Bitmap myImage = task.execute("https://bit.ly/ulideSpot" + idSpot).get();
+            //"https://bit.ly/ulidespot" + idSpot
+            Bitmap myImage = task.execute("https://bit.ly/ulidespot" + idSpot).get();
             spotImage.setImageBitmap(myImage);
-            Log.e("Image", "OK");
         } catch (ExecutionException e) {
             e.printStackTrace();
-            Log.e("Image", "ERRO01");
         } catch (InterruptedException e) {
             e.printStackTrace();
-            Log.e("Image", "ERRO02");
         }
     }
 
