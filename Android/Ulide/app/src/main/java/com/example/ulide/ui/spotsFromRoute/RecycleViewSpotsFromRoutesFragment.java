@@ -73,14 +73,14 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
 
     private ArrayList<String> spotsName;
     public static ArrayList<String> spotsId;
-    private ArrayList<LatLng> spotsPos;
+    public static ArrayList<LatLng> spotsPos;
     private ArrayList<Marker> markers;
     private JSONArray spotsArray;
     private GoogleMap mMap;
     public static String ID_SPOT;
 
 
-    FloatingActionButton startRoute;
+    private FloatingActionButton startRoute;
 
 
 

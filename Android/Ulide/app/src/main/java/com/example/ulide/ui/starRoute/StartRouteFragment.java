@@ -20,6 +20,7 @@ import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentFindRoutesBinding;
 import com.example.ulide.databinding.FragmentStartRouteBinding;
 import com.example.ulide.models.DirectionResponses;
+import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -30,6 +31,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.maps.android.PolyUtil;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -47,6 +49,7 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap map;
     private LatLng fkip;
     private LatLng monas;
+    private ArrayList<LatLng> spotsPos;
 
 
     FragmentStartRouteBinding binding;
@@ -59,8 +62,10 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
         binding = FragmentStartRouteBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        fkip = new LatLng(-6.3037978, 106.8693713);
-        monas = new LatLng(-6.1890511, 106.8251573);
+
+        spotsPos = RecycleViewSpotsFromRoutesFragment.spotsPos;
+
+
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.maps_start_route);
@@ -77,20 +82,31 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
 
-        MarkerOptions markerFkip = new MarkerOptions()
-                .position(fkip)
-                .title("FKIP");
-        MarkerOptions markerMonas = new MarkerOptions()
-                .position(monas)
-                .title("Monas");
+        for (int i = 0; i < spotsPos.size()-1; i++) {
 
-        map.addMarker(markerFkip);
-        map.addMarker(markerMonas);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(monas, 11.6f));
+            fkip = spotsPos.get(i);
+            monas = spotsPos.get(i+1);
 
-        String fromFKIP = String.valueOf(fkip.latitude) + "," + String.valueOf(fkip.longitude);
-        String toMonas = String.valueOf(monas.latitude) + "," + String.valueOf(monas.longitude);
+            MarkerOptions markerFkip = new MarkerOptions()
+                    .position(fkip)
+                    .title("FKIP");
+            MarkerOptions markerMonas = new MarkerOptions()
+                    .position(monas)
+                    .title("Monas");
+            map.addMarker(markerFkip);
+            map.addMarker(markerMonas);
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(monas, 11.6f));
 
+            String fromFKIP = String.valueOf(fkip.latitude) + "," + String.valueOf(fkip.longitude);
+            String toMonas = String.valueOf(monas.latitude) + "," + String.valueOf(monas.longitude);
+
+            drawLine(fromFKIP, toMonas);
+
+        }
+    }
+
+
+    public void drawLine(String fromFKIP, String toMonas){
         ApiServices apiServices = RetrofitClient.apiServices(requireContext());
         apiServices.getDirection(fromFKIP, toMonas, "AIzaSyC3RwBupXyFdul5XtIAWjDsF9f8ogyLam4")
                 .enqueue(new Callback<DirectionResponses>() {
@@ -113,7 +129,7 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
             PolylineOptions polyline = new PolylineOptions()
                     .addAll(PolyUtil.decode(shape))
                     .width(8f)
-                    .color(Color.RED);
+                    .color(Color.DKGRAY);
             map.addPolyline(polyline);
         }
     }
