@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import java.util.ArrayList;
@@ -58,6 +58,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import timber.log.Timber;
+
 public class RecycleViewSpotsFromRoutesFragment extends Fragment implements GoogleMap.OnMarkerClickListener, OnMapReadyCallback {
 
     private FragmentRecycleViewSpotsFromRoutesBinding binding;
@@ -70,12 +72,15 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
 
 
     private ArrayList<String> spotsName;
-    private ArrayList<String> spotsId;
+    public static ArrayList<String> spotsId;
     private ArrayList<LatLng> spotsPos;
     private ArrayList<Marker> markers;
     private JSONArray spotsArray;
     private GoogleMap mMap;
+    public static String ID_SPOT;
 
+
+    FloatingActionButton startRoute;
 
 
 
@@ -142,6 +147,16 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
         setHasOptionsMenu(false);
 
 
+
+        startRoute = binding.startRoute;
+
+
+        startRoute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_nav_recycle_view_spots_from_routes_to_nav_start_route);
+            }
+        });
 
         return root;
     }
@@ -287,8 +302,8 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
 
 
                     if (SystemClock.elapsedRealtime() - mLastClickTime < 250){
+                        ID_SPOT = spotsId.get(position);
                         Navigation.findNavController(view).navigate(R.id.action_nav_recycle_view_spots_from_routes_to_nav_spot);
-                        Log.e("Time", ""+mLastClickTime);
                     } else {
 
                         LatLng latLng = new LatLng(locationList.get(position).getLocationCoordinates().latitude , locationList.get(position).getLocationCoordinates().longitude );
@@ -302,7 +317,7 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
                                 .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                                 .build();
                         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                        Log.e("Time", ""+mLastClickTime);
+                        Timber.e("%s", mLastClickTime);
                     }
                     mLastClickTime = SystemClock.elapsedRealtime();
                 }

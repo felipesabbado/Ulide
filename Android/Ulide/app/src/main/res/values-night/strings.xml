@@ -4,4 +4,11 @@
     <string name="create_new_account">Create new account</string>
     <string name="enter_name">Enter name</string>
     <string name="enter_your_number">Enter your number</string>
+    <string name="spot_name">Spot Name</string>
+    <string name="rua">Rua</string>
+    <string name="tags">tags</string>
+    <string name="descri_ao_tentar_fazer_da_wikipedia">Descriçao tentar fazer da wikipedia</string>
+    <string name="todo">TODO</string>
+    <string name="base_url">https://maps.googleapis.com</string>
+    <string name="base_url_maps">https://maps.googleapis.com</string>
 </resources>

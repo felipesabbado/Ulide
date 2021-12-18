@@ -649,6 +649,14 @@
     <string name="tap_on_building_to_highlight">Tap on a building to highlight it</string>
     <string name="routes">Routes</string>
     <string name="spots">Spots</string>
+    <string name="spot_name">Spot Name</string>
+    <string name="rua">Rua</string>
+    <string name="tags">tags</string>
+    <string name="descri_ao_tentar_fazer_da_wikipedia">Descriçao tentar fazer da wikipedia</string>
+    <string name="todo">TODO</string>
+    <string name="base_url">https://maps.googleapis.com</string>
+    <string name="api_key">AIzaSyDl06p5YjO7HP2XdOAA07yD5e_7iuzf1q0</string>
+    <string name="base_url_maps">https://maps.googleapis.com</string>
 
 </resources>
 

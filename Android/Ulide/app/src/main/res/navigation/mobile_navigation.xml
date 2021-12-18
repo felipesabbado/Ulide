@@ -42,6 +42,12 @@
         tools:layout="@layout/fragment_create_spots" />
 
     <fragment
+        android:id="@+id/nav_start_route"
+        android:name="com.example.ulide.ui.starRoute.StartRouteFragment"
+        android:label="Test"
+        tools:layout="@layout/fragment_start_route" />
+
+    <fragment
         android:id="@+id/nav_recycle_view_spots_from_routes"
         android:name="com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment"
         android:label="@string/menu_spots"
@@ -57,6 +63,9 @@
             app:destination="@id/nav_spot"
             app:enterAnim="@android:anim/slide_in_left"
             app:popEnterAnim="@anim/slide_in_right" />
+        <action
+            android:id="@+id/action_nav_recycle_view_spots_from_routes_to_nav_start_route"
+            app:destination="@id/nav_start_route" />
     </fragment>
 
     <fragment
