@@ -44,8 +44,9 @@
             <TextView
                 android:id="@+id/textViewDescription"
                 android:layout_width="match_parent"
-                android:layout_height="223dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textSize="20dp"
                 android:text="@string/descri_ao_tentar_fazer_da_wikipedia"
                 android:textColor="#757575" />
 
