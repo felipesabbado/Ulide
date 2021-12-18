@@ -42,8 +42,8 @@ public class MapsHomeFragment extends Fragment {
             mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
             // Add a marker in Sydney and move the camera
-            LatLng lisbon = new LatLng(38.736946, -9.142685);
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 13));
+            LatLng lisbon = new LatLng(38.7273481, -9.2306308);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 11));
 
             // Add a marker in each spot
             markers = new ArrayList<>();

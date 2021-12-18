@@ -1,5 +1,6 @@
 package com.example.ulide.ui.spot;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,45 +10,30 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentSpotBinding;
+import com.example.ulide.downloaders.ImageDownloader;
 import com.example.ulide.downloaders.JSONObjDownloader;
 import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.api.net.FetchPlaceRequest;
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-
-public class SpotFragment extends Fragment implements OnMapReadyCallback {
-
-
-    private GoogleMap mMap;
+public class SpotFragment extends Fragment {
     private FragmentSpotBinding binding;
     private String idSpot;
     private JSONObject jsonObjectSpot;
-//    PlacesClient placesClient = Places.createClient(getActivity());
 
     protected static String spotName;
     protected String spotLat;
     protected String spotLong;
     protected String spotBio;
 
-
+    private ImageView spotImage;
     private TextView editTextSpotName;
     private TextView editTextSpotBio;
 
@@ -57,23 +43,8 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
 
         idSpot = RecycleViewSpotsFromRoutesFragment.ID_SPOT;
 
-
         JSONObjDownloader task = new JSONObjDownloader();
-
-
-
-
     }
-
-    // Define a Place ID.
-    final String placeId = "Palacio de belem";
-
-    // Specify the fields to return.
-    final List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
-
-    // Construct a request object, passing the place ID and fields array.
-    final FetchPlaceRequest request = FetchPlaceRequest.newInstance(placeId, placeFields);
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -82,45 +53,33 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
         binding = FragmentSpotBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapSpots);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
-
         editTextSpotName = binding.textViewSpotName;
         editTextSpotBio = binding.textViewDescription;
+        spotImage = binding.spotImage;
 
         getJSON(idSpot);
 
         editTextSpotName.setText(spotName);
         editTextSpotBio.setText(spotBio);
 
-
-
-//        placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
-//            Place place = response.getPlace();
-//            Log.i("Place", "Place found: " + place.getName());
-//        }).addOnFailureListener((exception) -> {
-//            if (exception instanceof ApiException) {
-//                final ApiException apiException = (ApiException) exception;
-//                Log.e("Place", "Place not found: " + exception.getMessage());
-//                final int statusCode = apiException.getStatusCode();
-//                // TODO: Handle error with given status code.
-//            }
-//        });
+        downloadImage();
 
         return root;
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        mMap.setBuildingsEnabled(false);
-
-        LatLng lisbon = new LatLng(38.736946, -9.142685);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 11));
+    public void downloadImage() {
+        ImageDownloader task = new ImageDownloader();
+        try {
+            Bitmap myImage = task.execute("https://bit.ly/ulideSpot" + idSpot).get();
+            spotImage.setImageBitmap(myImage);
+            Log.e("Image", "OK");
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            Log.e("Image", "ERRO01");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Log.e("Image", "ERRO02");
+        }
     }
 
     public void getJSON(String id){
@@ -137,8 +96,6 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
             for (int i = 0; i < jsonObjectSpot.length(); i++) {
                 try {
                     spotName = jsonObjectSpot.getString("spName");
-                    Log.e("INFO teste 1", spotName);
-                    Log.e("INFO", ""+id);
                     spotLat = jsonObjectSpot.getString("spLat");
                     spotLong = jsonObjectSpot.getString("spLong");
                     spotBio = jsonObjectSpot.getString("spBio");
