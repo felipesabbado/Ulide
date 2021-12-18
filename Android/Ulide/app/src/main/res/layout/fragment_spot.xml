@@ -6,31 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".ui.spot.SpotFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstrainLayoutMap"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="0dp"
-            android:layout_height="205dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".ui.home.MapsHomeFragment" />
-
-        <TextView
-            android:id="@+id/tvSpotName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Name: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/map" />
+            android:orientation="vertical" >
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/spotImage"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                tools:src="@tools:sample/backgrounds/scenic"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/textViewSpotName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/spot_name"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textViewStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rua"
+                android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/textViewSpace"
+                android:layout_width="match_parent"
+                android:layout_height="22dp" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:gravity="center"
+                android:text="@string/descri_ao_tentar_fazer_da_wikipedia"
+                android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/textViewTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tags"
+                android:textColor="#757575" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mapSpots"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="262dp"
+                tools:context=".ui.spot.SpotFragment" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentsSpot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

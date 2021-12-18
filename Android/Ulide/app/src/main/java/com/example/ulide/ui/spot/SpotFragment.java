@@ -9,48 +9,59 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentSpotBinding;
-import com.google.android.gms.common.api.ApiException;
+import com.example.ulide.downloaders.JSONObjDownloader;
+import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.FetchPlaceRequest;
-import com.google.android.libraries.places.api.net.PlacesClient;
+
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
+import java.util.concurrent.ExecutionException;
+
 
 public class SpotFragment extends Fragment implements OnMapReadyCallback {
 
 
     private GoogleMap mMap;
     private FragmentSpotBinding binding;
+    private String idSpot;
+    private JSONObject jsonObjectSpot;
 //    PlacesClient placesClient = Places.createClient(getActivity());
 
+    protected static String spotName;
+    protected String spotLat;
+    protected String spotLong;
+    protected String spotBio;
 
 
-    public SpotFragment() {
-        // Required empty public constructor
-    }
-
-    public static SpotFragment newInstance(String param1, String param2) {
-        SpotFragment fragment = new SpotFragment();
-        Bundle args = new Bundle();
-
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private TextView editTextSpotName;
+    private TextView editTextSpotBio;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        idSpot = RecycleViewSpotsFromRoutesFragment.ID_SPOT;
+
+
+        JSONObjDownloader task = new JSONObjDownloader();
+
+
+
 
     }
 
@@ -72,10 +83,20 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
         View root = binding.getRoot();
 
         SupportMapFragment mapFragment =
-                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapSpots);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
+
+        editTextSpotName = binding.textViewSpotName;
+        editTextSpotBio = binding.textViewDescription;
+
+        getJSON(idSpot);
+
+        editTextSpotName.setText(spotName);
+        editTextSpotBio.setText(spotBio);
+
+
 
 //        placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
 //            Place place = response.getPlace();
@@ -95,8 +116,38 @@ public class SpotFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mMap.setBuildingsEnabled(false);
 
         LatLng lisbon = new LatLng(38.736946, -9.142685);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lisbon, 11));
+    }
+
+    public void getJSON(String id){
+        JSONObjDownloader task = new JSONObjDownloader();
+        String url = "https://ulide.herokuapp.com/api/spots/" + id    ;
+        try {
+            jsonObjectSpot = task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            jsonObjectSpot = null;
+        }
+
+        if (jsonObjectSpot != null) {
+            for (int i = 0; i < jsonObjectSpot.length(); i++) {
+                try {
+                    spotName = jsonObjectSpot.getString("spName");
+                    Log.e("INFO teste 1", spotName);
+                    Log.e("INFO", ""+id);
+                    spotLat = jsonObjectSpot.getString("spLat");
+                    spotLong = jsonObjectSpot.getString("spLong");
+                    spotBio = jsonObjectSpot.getString("spBio");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
     }
 }
