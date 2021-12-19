@@ -16,11 +16,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ulide.MainActivity;
+import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentSpotBinding;
 import com.example.ulide.downloaders.ImageDownloader;
 import com.example.ulide.downloaders.JSONArrayDownloader;
 import com.example.ulide.downloaders.JSONObjDownloader;
 import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +47,8 @@ public class SpotFragment extends Fragment {
     private TextView textViewSpotName;
     private TextView textViewSpotBio;
     private TextView textViewSpotTags;
+    private FloatingActionButton floatingActionButtonOff;
+    private FloatingActionButton floatingActionButtonOn;
 
     private ListView listViewSpotEvaluations;
     public ArrayAdapter<String> adapter;
@@ -70,6 +74,8 @@ public class SpotFragment extends Fragment {
         textViewSpotTags = binding.textViewSpotTags;
         spotImage = binding.spotImage;
         listViewSpotEvaluations = binding.listViewSpotEvaluations;
+        floatingActionButtonOff = binding.floatingButtonFavSpotOff;
+        floatingActionButtonOn = binding.floatingButtonFavSpotOn;
 
         getJSON(idSpot);
         getJSONTags(idSpot);
@@ -84,6 +90,26 @@ public class SpotFragment extends Fragment {
         initializeAdapter();
 
         downloadImage();
+
+        floatingActionButtonOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (floatingActionButtonOff.getVisibility() == View.VISIBLE) {
+                    floatingActionButtonOff.setVisibility(View.INVISIBLE);
+                    floatingActionButtonOn.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        floatingActionButtonOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (floatingActionButtonOn.getVisibility() == View.VISIBLE) {
+                    floatingActionButtonOn.setVisibility(View.INVISIBLE);
+                    floatingActionButtonOff.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         return root;
     }

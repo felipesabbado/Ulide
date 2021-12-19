@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/drawable-anydpi/ic_fav_star.xml" value="0.240625" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/app_bar_main.xml" value="0.22447916666666667" />
@@ -11,6 +12,7 @@
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_find_routes.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile.xml" value="0.25" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_my_profile_tab.xml" value="0.22447916666666667" />
+        <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_recycle_view_spots_from_routes.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_routes.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spot.xml" value="0.22447916666666667" />
         <entry key="..\:/Felipe/ProjetoMobile/Ulide/Android/Ulide/app/src/main/res/layout/fragment_spots_from_route.xml" value="0.22447916666666667" />
