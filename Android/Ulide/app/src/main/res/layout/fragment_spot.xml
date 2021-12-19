@@ -62,14 +62,21 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tags"
                 android:textSize="20sp"
+                android:layout_marginBottom="8dp"
                 android:textColor="#757575" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/commentsSpot"
+            <TextView
+                android:id="@+id/textViewEvaluations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="32dp" />
+                android:text="Avaliações: "
+                android:textSize="16sp"
+                android:textColor="#757575" />
+
+            <ListView
+                android:id="@+id/listViewSpotEvaluations"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"/>
 
         </LinearLayout>
     </ScrollView>

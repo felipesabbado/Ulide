@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ulide.MainActivity;
@@ -24,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class SpotFragment extends Fragment {
@@ -43,6 +46,11 @@ public class SpotFragment extends Fragment {
     private TextView textViewSpotBio;
     private TextView textViewSpotTags;
 
+    private ListView listViewSpotEvaluations;
+    public ArrayAdapter<String> adapter;
+    private ArrayList<String> spotsRate;
+    private ArrayList<String> spotsComment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,19 +69,36 @@ public class SpotFragment extends Fragment {
         textViewSpotBio = binding.textViewDescription;
         textViewSpotTags = binding.textViewSpotTags;
         spotImage = binding.spotImage;
+        listViewSpotEvaluations = binding.listViewSpotEvaluations;
 
         getJSON(idSpot);
         getJSONTags(idSpot);
+        getJSONEvaluations(idSpot);
+
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(spotName);
 
         textViewSpotName.setText(spotName);
         textViewSpotBio.setText(spotBio);
         textViewSpotTags.setText(tags);
 
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(spotName);
+        initializeAdapter();
 
         downloadImage();
 
         return root;
+    }
+
+    private void initializeAdapter() {
+        ArrayList<String> evaluations = new ArrayList<>();
+        for (int i = 0; i < spotsRate.size(); i++) {
+            if (spotsComment.get(i) == "null") {
+                evaluations.add("Rate: " + spotsRate.get(i));
+            } else {
+                evaluations.add("Rate: " + spotsRate.get(i) + " - Comment: " + spotsComment.get(i));
+            }
+        }
+        adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, evaluations);
+        listViewSpotEvaluations.setAdapter(adapter);
     }
 
     public void downloadImage() {
@@ -132,6 +157,33 @@ public class SpotFragment extends Fragment {
                 try {
                     obj = jsonArray.getJSONObject(i);
                     tags += obj.getString("tgName") + "; ";
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void getJSONEvaluations(String id){
+        JSONArrayDownloader task = new JSONArrayDownloader();
+        String url = "https://ulide.herokuapp.com/api/spots/" + id + "/eval";
+        JSONArray jsonArray;
+        try {
+            jsonArray = task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            jsonArray = null;
+        }
+
+        JSONObject obj;
+        spotsRate = new ArrayList<>();
+        spotsComment = new ArrayList<>();
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    obj = jsonArray.getJSONObject(i);
+                    spotsRate.add(obj.getString("seRate"));
+                    spotsComment.add(obj.getString("seComment"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
