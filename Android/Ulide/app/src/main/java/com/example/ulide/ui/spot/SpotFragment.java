@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ulide.MainActivity;
 import com.example.ulide.databinding.FragmentSpotBinding;
 import com.example.ulide.downloaders.ImageDownloader;
 import com.example.ulide.downloaders.JSONArrayDownloader;
@@ -67,6 +68,8 @@ public class SpotFragment extends Fragment {
         textViewSpotName.setText(spotName);
         textViewSpotBio.setText(spotBio);
         textViewSpotTags.setText(tags);
+
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(spotName);
 
         downloadImage();
 
