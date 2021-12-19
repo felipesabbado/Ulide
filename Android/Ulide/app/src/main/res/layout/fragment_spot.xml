@@ -20,33 +20,31 @@
                 android:id="@+id/spotImage"
                 android:layout_width="match_parent"
                 android:layout_height="205dp"
+                android:layout_marginBottom="8dp"
                 android:src="@drawable/img" />
 
             <TextView
                 android:id="@+id/textViewSpotName"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:text="@string/spot_name"
-                android:textSize="34sp" />
+                android:textSize="34sp"
+                android:background="@color/teal_200"/>
 
             <TextView
                 android:id="@+id/textViewStreet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/rua"
+                android:text="@string/descricao"
+                android:textSize="16sp"
                 android:textColor="#757575" />
-
-            <TextView
-                android:id="@+id/textViewSpace"
-                android:layout_width="match_parent"
-                android:layout_height="22dp" />
 
             <TextView
                 android:id="@+id/textViewDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="20dp"
+                android:textSize="24sp"
                 android:text="@string/descri_ao_tentar_fazer_da_wikipedia"
                 android:textColor="#757575" />
 
@@ -55,6 +53,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tags"
+                android:textSize="16sp"
+                android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/textViewSpotTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tags"
+                android:textSize="20sp"
                 android:textColor="#757575" />
 
             <androidx.recyclerview.widget.RecyclerView

@@ -657,6 +657,7 @@
     <string name="base_url">https://maps.googleapis.com</string>
     <string name="api_key">AIzaSyDl06p5YjO7HP2XdOAA07yD5e_7iuzf1q0</string>
     <string name="base_url_maps">https://maps.googleapis.com</string>
+    <string name="descricao">Descrição:</string>
 
 </resources>
 

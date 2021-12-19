@@ -15,9 +15,11 @@ import android.widget.TextView;
 
 import com.example.ulide.databinding.FragmentSpotBinding;
 import com.example.ulide.downloaders.ImageDownloader;
+import com.example.ulide.downloaders.JSONArrayDownloader;
 import com.example.ulide.downloaders.JSONObjDownloader;
 import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,17 +35,18 @@ public class SpotFragment extends Fragment {
     protected String spotLong;
     protected String spotBio;
 
+    private String tags = "";
+
     private ImageView spotImage;
-    private TextView editTextSpotName;
-    private TextView editTextSpotBio;
+    private TextView textViewSpotName;
+    private TextView textViewSpotBio;
+    private TextView textViewSpotTags;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         idSpot = RecycleViewSpotsFromRoutesFragment.ID_SPOT;
-
-        JSONObjDownloader task = new JSONObjDownloader();
     }
 
     @Override
@@ -53,14 +56,17 @@ public class SpotFragment extends Fragment {
         binding = FragmentSpotBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        editTextSpotName = binding.textViewSpotName;
-        editTextSpotBio = binding.textViewDescription;
+        textViewSpotName = binding.textViewSpotName;
+        textViewSpotBio = binding.textViewDescription;
+        textViewSpotTags = binding.textViewSpotTags;
         spotImage = binding.spotImage;
 
         getJSON(idSpot);
+        getJSONTags(idSpot);
 
-        editTextSpotName.setText(spotName);
-        editTextSpotBio.setText(spotBio);
+        textViewSpotName.setText(spotName);
+        textViewSpotBio.setText(spotBio);
+        textViewSpotTags.setText(tags);
 
         downloadImage();
 
@@ -82,7 +88,7 @@ public class SpotFragment extends Fragment {
 
     public void getJSON(String id){
         JSONObjDownloader task = new JSONObjDownloader();
-        String url = "https://ulide.herokuapp.com/api/spots/" + id    ;
+        String url = "https://ulide.herokuapp.com/api/spots/" + id;
         try {
             jsonObjectSpot = task.execute(url).get();
         } catch (ExecutionException | InterruptedException e) {
@@ -103,6 +109,30 @@ public class SpotFragment extends Fragment {
                 }
             }
 
+        }
+    }
+
+    public void getJSONTags(String id){
+        JSONArrayDownloader task = new JSONArrayDownloader();
+        String url = "https://ulide.herokuapp.com/api/tags/spot/" + id;
+        JSONArray jsonArray;
+        try {
+            jsonArray = task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            jsonArray = null;
+        }
+
+        JSONObject obj;
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    obj = jsonArray.getJSONObject(i);
+                    tags += obj.getString("tgName") + "; ";
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
