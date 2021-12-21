@@ -87,8 +87,21 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         month = month+1;
-                        postBDate = year+"-"+month+"-"+day;
-                        String date = day+"/"+month+"/"+year;
+
+                        String yearString = String.valueOf(year);
+
+                        String monthString = String.valueOf(month);
+                        if (month<10){
+                            monthString = "0"+monthString;
+                        }
+
+                        String dayString = String.valueOf(day);
+                        if (day<10){
+                            dayString = "0"+dayString;
+                        }
+
+                        postBDate = yearString+"-"+monthString+"-"+dayString;
+                        String date = dayString+"/"+monthString+"/"+yearString;
                         birthDate.setText(date);
                     }
                 }, year, month, day);

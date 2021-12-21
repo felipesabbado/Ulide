@@ -20,11 +20,13 @@ import com.example.ulide.R;
 import com.example.ulide.databinding.FragmentFindRoutesBinding;
 import com.example.ulide.databinding.FragmentStartRouteBinding;
 import com.example.ulide.models.DirectionResponses;
+import com.example.ulide.models.LegsItem;
 import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -89,10 +91,11 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
 
             MarkerOptions markerFkip = new MarkerOptions()
                     .position(fkip)
-                    .title("FKIP");
+                    .title("2");
             MarkerOptions markerMonas = new MarkerOptions()
                     .position(monas)
-                    .title("Monas");
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                    .title("1");
             map.addMarker(markerFkip);
             map.addMarker(markerMonas);
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(monas, 11.6f));
@@ -101,6 +104,9 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
             String toMonas = String.valueOf(monas.latitude) + "," + String.valueOf(monas.longitude);
 
             drawLine(fromFKIP, toMonas);
+            LegsItem item = new LegsItem();
+
+            Log.e("distancia", ""+ item.getDistance() );
 
         }
     }
@@ -126,6 +132,10 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
     private void drawPolyline(@NonNull Response<DirectionResponses> response) {
         if (response.body() != null) {
             String shape = response.body().getRoutes().get(0).getOverviewPolyline().getPoints();
+            int distance = response.body().getRoutes().get(0).getLegs().get(0).getDistance().getValue();
+            int duration = response.body().getRoutes().get(0).getLegs().get(0).getDuration().getValue();
+            Log.e("distanciaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", ""+distance);
+            Log.e("durationnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", ""+duration);
             PolylineOptions polyline = new PolylineOptions()
                     .addAll(PolyUtil.decode(shape))
                     .width(8f)

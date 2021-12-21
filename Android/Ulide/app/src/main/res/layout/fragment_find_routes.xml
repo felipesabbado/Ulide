@@ -18,7 +18,7 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="261dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,17 +26,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:foregroundTint="@color/teal_700"
         android:backgroundTint="#00897B"/>
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="53dp"
-        android:layout_height="43dp"
-        android:src="@drawable/ic_filter"
-        app:layout_constraintBottom_toTopOf="@+id/listRoutes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toEndOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
