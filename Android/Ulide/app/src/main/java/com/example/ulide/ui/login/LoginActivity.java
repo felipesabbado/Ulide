@@ -55,8 +55,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        /*usernameEditText.setText("mainAccount123");
-        passwordEditText.setText("123456");*/
+        usernameEditText.setText("mainAccount123");
+        passwordEditText.setText("123456");
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override

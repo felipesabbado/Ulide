@@ -14,13 +14,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ulide.MainActivity;
 import com.example.ulide.R;
+import com.example.ulide.data.LoginDataSource;
 import com.example.ulide.databinding.FragmentSpotBinding;
 import com.example.ulide.downloaders.ImageDownloader;
 import com.example.ulide.downloaders.JSONArrayDownloader;
 import com.example.ulide.downloaders.JSONObjDownloader;
+import com.example.ulide.downloaders.JSONStringDownloader;
+import com.example.ulide.downloaders.PostData;
 import com.example.ulide.ui.spotsFromRoute.RecycleViewSpotsFromRoutesFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,11 +33,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class SpotFragment extends Fragment {
     private FragmentSpotBinding binding;
     private String idSpot;
+    private String idUser;
+    private String favSpotId;
     private JSONObject jsonObjectSpot;
 
     protected static String spotName;
@@ -60,6 +68,7 @@ public class SpotFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         idSpot = RecycleViewSpotsFromRoutesFragment.ID_SPOT;
+        idUser = String.valueOf(LoginDataSource.ID);
     }
 
     @Override
@@ -91,13 +100,28 @@ public class SpotFragment extends Fragment {
 
         downloadImage();
 
+        favSpotId = getJSONFav(idUser, idSpot);
+
+        if (!favSpotId.isEmpty()) {
+            floatingActionButtonOn.setVisibility(View.VISIBLE);
+            floatingActionButtonOff.setVisibility(View.INVISIBLE);
+        } else {
+            floatingActionButtonOn.setVisibility(View.INVISIBLE);
+            floatingActionButtonOff.setVisibility(View.VISIBLE);
+        }
+
         floatingActionButtonOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Post do Spot favorito
+                postData();
+                // Visibilidade do botão
                 if (floatingActionButtonOff.getVisibility() == View.VISIBLE) {
                     floatingActionButtonOff.setVisibility(View.INVISIBLE);
                     floatingActionButtonOn.setVisibility(View.VISIBLE);
                 }
+                // Novo id do favSpot
+                favSpotId = getJSONFav(idUser, idSpot);
             }
         });
 
@@ -215,5 +239,34 @@ public class SpotFragment extends Fragment {
                 }
             }
         }
+    }
+
+    public String getJSONFav(String idUser, String idSpot) {
+        JSONStringDownloader task = new JSONStringDownloader();
+        String url = "https://ulide.herokuapp.com/api/favSpots/" + idUser + "/" + idSpot;
+        try {
+            return task.execute(url).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void postData() {
+        Map<String, String> postData = new HashMap<>();
+        postData.put("fsUs", idUser);
+        postData.put("fsSp", idSpot);
+
+        PostData task = new PostData(postData);
+        try {
+            task.execute("https://ulide.herokuapp.com/api/favSpots").get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Toast.makeText(getActivity(), "Local adicionado aos Favoritos!",
+                Toast.LENGTH_SHORT).show();
     }
 }
