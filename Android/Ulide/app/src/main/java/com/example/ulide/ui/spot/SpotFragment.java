@@ -20,6 +20,7 @@ import com.example.ulide.MainActivity;
 import com.example.ulide.R;
 import com.example.ulide.data.LoginDataSource;
 import com.example.ulide.databinding.FragmentSpotBinding;
+import com.example.ulide.downloaders.DeleteData;
 import com.example.ulide.downloaders.ImageDownloader;
 import com.example.ulide.downloaders.JSONArrayDownloader;
 import com.example.ulide.downloaders.JSONObjDownloader;
@@ -128,10 +129,22 @@ public class SpotFragment extends Fragment {
         floatingActionButtonOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Visibilidade do botão
                 if (floatingActionButtonOn.getVisibility() == View.VISIBLE) {
                     floatingActionButtonOn.setVisibility(View.INVISIBLE);
                     floatingActionButtonOff.setVisibility(View.VISIBLE);
                 }
+                // Delete do Spot favorito
+                deleteData(favSpotId);
+                /*JSONStringDownloader task = new JSONStringDownloader();
+                String url = "https://ulide.herokuapp.com/api/favSpots/del/" + favSpotId;
+                try {
+                    task.execute(url).get();
+                    Log.e("INFO", ""+task.toString());
+                } catch (ExecutionException | InterruptedException e) {
+                    e.printStackTrace();
+                    Log.e("INFO", "erro");
+                }*/
             }
         });
 
@@ -267,6 +280,22 @@ public class SpotFragment extends Fragment {
         }
 
         Toast.makeText(getActivity(), "Local adicionado aos Favoritos!",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    public void deleteData(String id) {
+        DeleteData task = new DeleteData();
+        Log.e("INFO", ""+id);
+        String url = "https://ulide.herokuapp.com/api/favSpots/" + id;
+        try {
+            task.execute(url).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Toast.makeText(getActivity(), "Local removido dos Favoritos!",
                 Toast.LENGTH_SHORT).show();
     }
 }
