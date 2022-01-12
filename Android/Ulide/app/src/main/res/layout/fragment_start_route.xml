@@ -5,12 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".ui.starRoute.StartRouteFragment">
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/maps_start_route"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".startRoute.StartRouteFragment" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewDistAndTime"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="dist and time" />
+
+        <fragment
+            android:id="@+id/maps_start_route"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".startRoute.StartRouteFragment" />
+    </LinearLayout>
 
 </FrameLayout>

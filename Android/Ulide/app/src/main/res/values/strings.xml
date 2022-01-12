@@ -104,7 +104,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="search">Search</string>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">👤 Username</string>
     <string name="prompt_password">🔒 Password</string>
@@ -658,6 +658,221 @@
     <string name="api_key">AIzaSyDl06p5YjO7HP2XdOAA07yD5e_7iuzf1q0</string>
     <string name="base_url_maps">https://maps.googleapis.com</string>
     <string name="descricao">Descrição:</string>
+
+    <!--
+ Copyright 2020 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+
+
+
+    <!-- title for error alerts. -->
+    <string name="error_alert_title" translatable="false">Uh-Oh!</string>
+    <!-- message to show for error alerts when location origin is malformed. -->
+    <string name="error_alert_message_invalid_origin" translatable="false">Unable to parse Location Origin. Expected format: "33, 128"</string>
+    <!-- message to show for error alerts when location bias or restriction is malformed. -->
+    <string name="error_alert_message_invalid_bounds" translatable="false">Unable to parse Location Bias or Location Restriction. Expected format: "33, 128"</string>
+    <!-- message to show for error alerts when a photo size field is malformed. -->
+    <string name="error_alert_message_invalid_photo_size" translatable="false">Unable to parse Photo size. Expected format is integers</string>
+
+    <string name="error_api_key" translatable="false">No API key defined in gradle.properties</string>
+
+    <!-- Text for raw results checkbox. When checked raw return values will be displayed. -->
+    <string name="display_raw_results" translatable="false">Display raw results?</string>
+
+
+    <!-- MAIN ACTIVITY -->
+
+    <!-- Label for spinner/chooser for color themes. -->
+    <string name="theme_spinner_text" translatable="false">Choose a color theme…</string>
+
+    <!-- Button for launching autocomplete test activity. -->
+    <string name="autocomplete_button" translatable="false">Autocomplete</string>
+
+    <!-- Button for launching autocomplete address form activity. -->
+    <string name="autocomplete_address_button" translatable="false">Autocomplete Address Form</string>
+
+    <!-- Button for launching autocomplete address form activity. -->
+    <string name="programmatic_autocomplete_geocoding_button">Programmatic Autocomplete + Geocoding</string>
+
+    <!-- Button for launching place and photo test activity. -->
+    <string name="place_and_photo_button" translatable="false">Place and Photo</string>
+
+    <!-- Button for launching current place test activity. -->
+    <string name="current_place_button" translatable="false">Current Place</string>
+
+
+    <!-- AUTOCOMPLETE TEST -->
+
+    <!-- Hint for the autocomplete widget's initial query and autocomplete prediction's query field. -->
+    <string name="autocomplete_query_hint" translatable="false">(Initial) Query</string>
+
+    <!-- Hint for the autocomplete widget's query field. -->
+    <string name="autocomplete_hint_hint" translatable="false">Hint</string>
+
+    <!-- Hint for the autocomplete prediction's and widget's countries field. -->
+    <string name="autocomplete_country_hint" translatable="false">Countries (e.g CH, US, RO)</string>
+
+    <!-- Hint Text for the autocomplete prediction's and widget's type filter field. -->
+    <string name="autocomplete_type_filter" translatable="false">Type Filter</string>
+
+    <!-- Label for the autocomplete prediction's and widget's location origin field. -->
+    <string name="autocomplete_location_origin_label" translatable="false">Location Origin (format: -33.2, 128.2)</string>
+
+    <!-- Label for the autocomplete prediction's and widget's location bias related fields. -->
+    <string name="autocomplete_location_bias_label" translatable="false">Location Bias (format: -33.2, 128.2)</string>
+
+    <!-- Label for the autocomplete prediction's and widget's location restriction related fields. -->
+    <string name="autocomplete_location_restriction_label" translatable="false">Location Restriction (format: -33.2, 128.2)</string>
+
+    <!-- Hint for the autocomplete prediction's and widget's location origin field. -->
+    <string name="autocomplete_location_origin_hint" translatable="false">Origin (lat, lng)</string>
+
+    <!-- Hint for the autocomplete prediction's and widget's location southwest field. -->
+    <string name="autocomplete_location_south_west_hint" translatable="false">South West (lat, lng)</string>
+
+    <!-- Hint for the autocomplete prediction's and widget's location northeast field. -->
+    <string name="autocomplete_location_north_east_hint" translatable="false">North East (lat, lng)</string>
+
+
+    <!-- Text for enabling autocomplete prediction's and widget's type filter field. -->
+    <string name="autocomplete_use_type_filter" translatable="false">Use TypeFilter?</string>
+
+    <!-- Text for enabling autocomplete prediction's use of session tokens. -->
+    <string name="autocomplete_use_session_token" translatable="false">(Predictions-only) Use session token?</string>
+
+    <!-- Text for autocomplete activity mode (overlay or fullscreen) checkbox. -->
+    <string name="autocomplete_activity_overlay_mode" translatable="false">Overlay mode?</string>
+
+    <!-- Text for the autocomplete support fragment section label. -->
+    <string name="autocomplete_support_fragment_text_label" translatable="false">Autocomplete Support Fragment:</string>
+
+    <!-- Text for the autocomplete fragment section label. -->
+    <string name="autocomplete_fragment_text_label" translatable="false">Autocomplete Fragment:</string>
+
+    <!-- Text for the autocomplete support fragment update button. -->
+    <string name="autocomplete_support_fragment_update_button" translatable="false">Update Support Fragment</string>
+
+    <!-- Text for the autocomplete fragment update button. -->
+    <string name="autocomplete_fragment_update_button" translatable="false">Update Fragment</string>
+
+    <!-- Text for starting the autocomplete activity button. -->
+    <string name="autocomplete_activity_button" translatable="false">Open Activity</string>
+
+    <!-- Text for the fetch autocomplete predictions submit button. -->
+    <string name="fetch_autocomplete_predictions_button" translatable="false">Fetch Predictions</string>
+
+
+    <!-- AUTOCOMPLETE ADDRESS -->
+
+    <!-- Hint for the autocomplete form's first address line field. -->
+    <string name="autocomplete_address1_hint" translatable="false">Enter the address</string>
+
+    <!-- Label for the autocomplete form's heading. -->
+    <string name="autocomplete_address_heading_label" translatable="false">Delivery Address</string>
+
+    <!-- Label for the address form's first address line field. -->
+    <string name="autocomplete_address1_label" translatable="false">Address Line 1</string>
+
+    <!-- Label for the address form's second address line field. -->
+    <string name="autocomplete_address2_label" translatable="false">Apartment, unit, suite, or floor #</string>
+
+    <!-- Label for the address form's city field. -->
+    <string name="autocomplete_city_label" translatable="false">City</string>
+
+    <!-- Label for the address form's state field. -->
+    <string name="autocomplete_state_label" translatable="false">State/Province</string>
+
+    <!-- Label for the address form's postal code field. -->
+    <string name="autocomplete_postal_label" translatable="false">Postal code</string>
+
+    <!-- Label for the address form's country field. -->
+    <string name="autocomplete_country_label" translatable="false">Country/Region</string>
+
+    <!-- Label for the address form's proximity check setting. -->
+    <string name="autocomplete_proximity_check" translatable="false">Check device proximity</string>
+
+    <!-- Label for the address form's confirmation map. -->
+    <string name="autocomplete_map_label" translatable="false">Map view of the selected address</string>
+
+    <!-- Text for the address form submit button. -->
+    <string name="autocomplete_save_button" translatable="false">Submit address</string>
+
+    <!-- Text for the address form reset button. -->
+    <string name="autocomplete_reset_button" translatable="false">Clear form</string>
+
+    <!-- Text for the toast message for permissions denied. -->
+    <string name="autocomplete_denied_message" translatable="false">User denied location permission. Cannot check proximity to entered address.</string>
+
+    <!-- Text for the toast message for proximity match in progress. -->
+    <string name="autocomplete_progress_message" translatable="false">Checking proximity</string>
+
+    <!-- Text for the toast message for a successful proximity match. -->
+    <string name="autocomplete_match_message" translatable="false">Device location matches entered address</string>
+
+    <!-- Text for the toast message for a failed proximity match. -->
+    <string name="autocomplete_nomatch_message" translatable="false">Device location does not match entered address</string>
+
+    <!-- Text for the toast message for a skilled proximity match. -->
+    <string name="autocomplete_skipped_message" translatable="false">Address accepted without checking proximity</string>
+
+    <!-- FETCH PLACE AND PHOTO -->
+
+    <!-- Hint for the place ID field. -->
+    <string name="place_id_field_hint" translatable="false">Enter place ID</string>
+
+    <!-- Text for the fetch place and photo button. -->
+    <string name="fetch_photo_checkbox" translatable="false">Also fetch photo?</string>
+
+    <!-- Hint for the fetch photo max width field. -->
+    <string name="photo_max_width_hint" translatable="false">Photo Max Width</string>
+
+    <!-- Text for the fetch photo max height field. -->
+    <string name="photo_max_height_hint" translatable="false">Photo Max Height</string>
+
+    <!-- Text for the fetch place and photo button. -->
+    <string name="use_custom_photo_reference" translatable="false">Use custom Photo Reference?</string>
+
+    <!-- Text for the fetch place and photo button. -->
+    <string name="custom_photo_reference_hint" translatable="false">Custom Photo Reference</string>
+
+    <!-- Text for checkbox to set custom list of Place Fields. -->
+    <string name="use_custom_fields" translatable="false">Manually set Place Fields?</string>
+
+    <!-- Text for the fetch place and photo button. -->
+    <string name="fetch_place_and_photo_button" translatable="false">Fetch Place and Photo</string>
+
+
+    <!-- FIND CURRENT PLACE -->
+
+    <!-- Text for the find current place submit button. -->
+    <string name="find_current_place_button" translatable="false">Find Current Place</string>
+    <string name="icon_view_content_description" translatable="false">Icon View</string>
+    <string name="fetch_icon_checkbox" translatable="false">Also fetch icon?</string>
+    <string name="fetch_icon_missing_fields_warning" translatable="false">\'Also fetch icon?\' is selected, but ICON_URL Place Field is not.</string>
+    <string name="icon_view_image_content_description" translatable="false">Image view to display a Place Icon Image</string>
+    <string name="icon_with_background" translatable="false">Icon with background:</string>
+    <string name="place_photo" translatable="false">Place photo:</string>
+    <!-- Place ID for SFO, used as the default for testing in the Place and Photo screen -->
+    <string name="place_id_SFO" translatable="false">ChIJVVVVVYx3j4ARP-3NGldc8qQ</string>
+
+    <string name="search">Search</string>
+    <string name="search_a_place">Search a Place</string>
+    <string name="programmatic_place_predictions_instructions">This activity demonstrates as-you-type programmatic place predictions. Tap on the search icon on the toolbar and search for a place.</string>
+
+
 
 </resources>
 

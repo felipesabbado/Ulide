@@ -10,6 +10,11 @@
         android:name="com.example.ulide.ui.home.MapsHomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_maps_home" />
+    <activity
+        android:id="@+id/nav_autocomplete"
+        android:name="com.example.ulide.ui.autocomplete.AutocompleteTestActivity"
+        android:label="Create Route"
+        tools:layout="@layout/fragment_autocomplete" />
     <fragment
         android:id="@+id/nav_my_profile"
         android:name="com.example.ulide.ui.myProfile.MyProfileFragment"

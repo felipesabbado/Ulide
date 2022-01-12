@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -324,7 +323,6 @@ public class RecycleViewSpotsFromRoutesFragment extends Fragment implements Goog
             });
         }
 
-        String n = "raining";
         @Override
         public int getItemCount() {
             return locationList.size();

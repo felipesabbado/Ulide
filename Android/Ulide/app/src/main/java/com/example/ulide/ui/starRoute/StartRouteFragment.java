@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.TextView;
 
 
 import com.example.ulide.R;
@@ -52,6 +52,8 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
     private LatLng fkip;
     private LatLng monas;
     private ArrayList<LatLng> spotsPos;
+    private TextView info;
+    private int duration, distance;
 
 
     FragmentStartRouteBinding binding;
@@ -66,6 +68,8 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
 
 
         spotsPos = RecycleViewSpotsFromRoutesFragment.spotsPos;
+
+        info = binding.textViewDistAndTime;
 
 
 
@@ -119,6 +123,7 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
                     @Override
                     public void onResponse(@NonNull Call<DirectionResponses> call, @NonNull Response<DirectionResponses> response) {
                         drawPolyline(response);
+                        info.setText("Distance: " + distance/100 + "KM" + "   " + "Travel time: " + duration / 60 + "min");
                         Timber.d(response.message());
                     }
 
@@ -132,8 +137,8 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
     private void drawPolyline(@NonNull Response<DirectionResponses> response) {
         if (response.body() != null) {
             String shape = response.body().getRoutes().get(0).getOverviewPolyline().getPoints();
-            int distance = response.body().getRoutes().get(0).getLegs().get(0).getDistance().getValue();
-            int duration = response.body().getRoutes().get(0).getLegs().get(0).getDuration().getValue();
+            distance = response.body().getRoutes().get(0).getLegs().get(0).getDistance().getValue();
+            duration = response.body().getRoutes().get(0).getLegs().get(0).getDuration().getValue();
             Log.e("distanciaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", ""+distance);
             Log.e("durationnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", ""+duration);
             PolylineOptions polyline = new PolylineOptions()
