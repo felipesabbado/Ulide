@@ -1,0 +1,165 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.ulide2"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml
+10    <!--
+11         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+12         Google Maps Android API v2, but you must specify either coarse or fine
+13         location permissions for the "MyLocation" functionality.
+14    -->
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:9:5-79
+15-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:9:22-76
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:10:5-67
+16-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:10:22-64
+17
+18    <!-- Include required permissions for Google Maps API to run. -->
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:23:5-79
+19-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:23:22-76
+20
+21    <uses-feature
+21-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:26:5-28:35
+22        android:glEsVersion="0x00020000"
+22-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:27:9-41
+23        android:required="true" />
+23-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:28:9-32
+24
+25    <queries>
+25-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:30:5-34:15
+26
+27        <!-- Needs to be explicitly declared on Android R+ -->
+28        <package android:name="com.google.android.apps.maps" />
+28-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:33:9-64
+28-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:33:18-61
+29    </queries>
+30
+31    <application
+31-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:12:5-62:19
+32        android:allowBackup="true"
+32-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:13:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.5.0] C:\Users\leona\.gradle\caches\transforms-3\255d63c0f9f8f5d12ab3191ffb377750\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:icon="@mipmap/ic_launcher"
+36-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:14:9-43
+37        android:label="@string/app_name"
+37-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:15:9-41
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:16:9-54
+39        android:supportsRtl="true"
+39-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:17:9-35
+40        android:testOnly="true"
+41        android:theme="@style/Theme.Ulide2" >
+41-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:18:9-44
+42        <activity
+42-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:19:9-21:39
+43            android:name="com.example.ulide2.TestActivity.Spiners"
+43-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:20:13-49
+44            android:exported="true" />
+44-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:21:13-36
+45        <activity
+45-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:22:9-24:39
+46            android:name="com.example.ulide2.SpotInfoMenu"
+46-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:23:13-41
+47            android:exported="true" />
+47-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:24:13-36
+48        <activity
+48-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:25:9-27:39
+49            android:name="com.example.ulide2.SpotsMenu"
+49-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:26:13-38
+50            android:exported="true" />
+50-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:27:13-36
+51        <activity
+51-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:28:9-30:39
+52            android:name="com.example.ulide2.CreateSpotsMenu"
+52-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:29:13-44
+53            android:exported="true" />
+53-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:30:13-36
+54        <activity
+54-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:31:9-33:39
+55            android:name="com.example.ulide2.MyProfileMenu"
+55-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:32:13-42
+56            android:exported="true" />
+56-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:33:13-36
+57        <activity
+57-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:34:9-36:39
+58            android:name="com.example.ulide2.RoutesMenu"
+58-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:35:13-39
+59            android:exported="true" />
+59-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:36:13-36
+60        <!--
+61             The API key for Google Maps-based APIs is defined as a string resource.
+62             (See the file "res/values/google_maps_api.xml").
+63             Note that the API key is linked to the encryption key used to sign the APK.
+64             You need a different API key for each encryption key, including the release key that is used to
+65             sign the APK for publishing.
+66             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+67        -->
+68        <meta-data
+68-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:45:9-47:55
+69            android:name="com.google.android.geo.API_KEY"
+69-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:46:13-58
+70            android:value="@string/google_maps_key" />
+70-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:47:13-52
+71
+72        <activity
+72-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:49:9-52:64
+73            android:name="com.example.ulide2.MainMenu"
+73-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:50:13-37
+74            android:exported="true"
+74-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:51:13-36
+75            android:label="@string/title_activity_main_menu" />
+75-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:52:13-61
+76        <activity
+76-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:53:9-61:20
+77            android:name="com.example.ulide2.MainActivity"
+77-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:54:13-41
+78            android:exported="true" >
+78-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:55:13-36
+79            <intent-filter>
+79-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:56:13-60:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:57:17-69
+80-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:57:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:59:17-77
+82-->C:\Users\leona\Documents\aula\2 ano\1 semestre\UlideGit\Android\Ulide2\app\src\main\AndroidManifest.xml:59:27-74
+83            </intent-filter>
+84        </activity>
+85        <!-- Needs to be explicitly declared on P+ -->
+86        <uses-library
+86-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:39:9-41:40
+87            android:name="org.apache.http.legacy"
+87-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:40:13-50
+88            android:required="false" />
+88-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\leona\.gradle\caches\transforms-3\58714289bf2a2c64f1cffb3dc7303cc6\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:41:13-37
+89
+90        <activity
+90-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\7adb15563f6c430089a337c415b07142\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+91            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+91-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\7adb15563f6c430089a337c415b07142\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+92            android:exported="false"
+92-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\7adb15563f6c430089a337c415b07142\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+93-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\7adb15563f6c430089a337c415b07142\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+94
+95        <meta-data
+95-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\04c41a622b11bbd1762f8b6dda91ff26\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+96            android:name="com.google.android.gms.version"
+96-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\04c41a622b11bbd1762f8b6dda91ff26\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+97            android:value="@integer/google_play_services_version" />
+97-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\leona\.gradle\caches\transforms-3\04c41a622b11bbd1762f8b6dda91ff26\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+98    </application>
+99
+100</manifest>

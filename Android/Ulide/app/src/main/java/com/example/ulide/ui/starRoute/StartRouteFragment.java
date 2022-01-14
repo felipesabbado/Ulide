@@ -53,7 +53,8 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
     private LatLng monas;
     private ArrayList<LatLng> spotsPos;
     private TextView info;
-    private int duration, distance;
+    private int duration;
+    private double distance;
 
 
     FragmentStartRouteBinding binding;
@@ -123,7 +124,7 @@ public class StartRouteFragment extends Fragment implements OnMapReadyCallback {
                     @Override
                     public void onResponse(@NonNull Call<DirectionResponses> call, @NonNull Response<DirectionResponses> response) {
                         drawPolyline(response);
-                        info.setText("Distance: " + distance/100 + "KM" + "   " + "Travel time: " + duration / 60 + "min");
+                        info.setText("Distance: " + String.format("%.2f", distance/1000) + "KM" + "   " + "Travel time: " + duration / 60 + "min");
                         Timber.d(response.message());
                     }
 

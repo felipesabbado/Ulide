@@ -32,7 +32,7 @@ public class JSONObjDownloader extends AsyncTask<String, Void, JSONObject> {
                 data = reader.read();
             }
 
-            Log.e("JSON", result);
+//            Log.e("JSON", result);
             JSONObject obj = new JSONObject(result);
 
             return obj;

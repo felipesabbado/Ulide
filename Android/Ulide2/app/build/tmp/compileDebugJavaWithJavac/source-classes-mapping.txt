@@ -1,0 +1,49 @@
+com/example/ulide2/databinding/ActivityCreateSpotsMenuBinding.java
+ com.example.ulide2.databinding.ActivityCreateSpotsMenuBinding
+com/example/ulide2/downloads/JSONArrayDownloader.java
+ com.example.ulide2.downloads.JSONArrayDownloader
+com/example/ulide2/MyProfileMenu.java
+ com.example.ulide2.MyProfileMenu
+com/example/ulide2/downloads/DownloadTask.java
+ com.example.ulide2.downloads.DownloadTask
+com/example/ulide2/CreateSpotsMenu.java
+ com.example.ulide2.CreateSpotsMenu
+com/example/ulide2/databinding/ActivityMainMenuBinding.java
+ com.example.ulide2.databinding.ActivityMainMenuBinding
+com/example/ulide2/databinding/ActivityRoutesMenuBinding.java
+ com.example.ulide2.databinding.ActivityRoutesMenuBinding
+com/example/ulide2/databinding/ActivityMainBinding.java
+ com.example.ulide2.databinding.ActivityMainBinding
+com/example/ulide2/TestActivity/Spiners.java
+ com.example.ulide2.TestActivity.Spiners
+ com.example.ulide2.TestActivity.Spiners$1
+com/example/ulide2/downloads/MyProfileDownloads.java
+ com.example.ulide2.downloads.MyProfileDownloads
+com/example/ulide2/databinding/ActivitySpotInfoMenuBinding.java
+ com.example.ulide2.databinding.ActivitySpotInfoMenuBinding
+com/example/ulide2/downloads/CreatSpotsDownloads.java
+ com.example.ulide2.downloads.CreatSpotsDownloads
+com/example/ulide2/downloads/JSONObjDownloader.java
+ com.example.ulide2.downloads.JSONObjDownloader
+com/example/ulide2/databinding/ActivityMyProfileMenuBinding.java
+ com.example.ulide2.databinding.ActivityMyProfileMenuBinding
+com/example/ulide2/downloads/RoutesDownloads.java
+ com.example.ulide2.downloads.RoutesDownloads
+com/example/ulide2/databinding/ActivitySpotsMenuBinding.java
+ com.example.ulide2.databinding.ActivitySpotsMenuBinding
+com/example/ulide2/BuildConfig.java
+ com.example.ulide2.BuildConfig
+com/example/ulide2/SpotInfoMenu.java
+ com.example.ulide2.SpotInfoMenu
+com/example/ulide2/databinding/ActivitySpinersBinding.java
+ com.example.ulide2.databinding.ActivitySpinersBinding
+com/example/ulide2/SpotsMenu.java
+ com.example.ulide2.SpotsMenu
+ com.example.ulide2.SpotsMenu$1
+com/example/ulide2/MainActivity.java
+ com.example.ulide2.MainActivity
+com/example/ulide2/MainMenu.java
+ com.example.ulide2.MainMenu
+com/example/ulide2/RoutesMenu.java
+ com.example.ulide2.RoutesMenu
+ com.example.ulide2.RoutesMenu$1
